@@ -21,6 +21,7 @@
     "ft-error-behavior": "filethis/ft-error-behavior#^0.0.1",
     "ft-http-behavior": "filethis/ft-http-behavior#^0.0.1",
     "ft-confirmation-dialog": "filethis/ft-confirmation-dialog#^0.0.1",
+    "ft-icon-button": "filethis/ft-icon-button#^0.0.2",
     "iron-image": "PolymerElements/iron-image#^1.2.5",
     "paper-tabs": "PolymerElements/paper-tabs#^1.8.0",
     "array-filter": "43081j/array-filter#^1.0.2",
