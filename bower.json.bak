@@ -17,7 +17,7 @@
     "ft-source-panel": "filethis/ft-source-panel#^0.0.6",
     "ft-source-grid": "filethis/ft-source-grid#^0.0.3",
     "ft-source-grid-item": "filethis/ft-source-grid-item#^0.0.3",
-    "ft-user-interaction-form": "filethis/ft-user-interaction-form#^0.0.10",
+    "ft-user-interaction-form": "filethis/ft-user-interaction-form#^0.0.11",
     "ft-error-behavior": "filethis/ft-error-behavior#^0.0.1",
     "ft-http-behavior": "filethis/ft-http-behavior#^0.0.1",
     "ft-confirmation-dialog": "filethis/ft-confirmation-dialog#^0.0.1",
