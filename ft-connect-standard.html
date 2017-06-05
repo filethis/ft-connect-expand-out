@@ -122,9 +122,11 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
         </div>
 
         <!-- User interaction dialog -->
-        <paper-dialog modal id="modalInteractionDialog"
-                      style="width:450px;
-                      padding-left:40px; padding-top:12px; padding-right:40px; padding-bottom:5px;">
+        <paper-dialog
+                modal
+                id="modalInteractionDialog"
+                style="width:450px;
+                padding-left:40px; padding-top:12px; padding-right:40px; padding-bottom:5px;">
 
             <ft-user-interaction-form
                     id="interactionForm"
@@ -160,6 +162,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
 
     </template>
 
+    <!-- Load Log4JavaScript library -->
     <script type="text/javascript" src="../log4javascript/log4javascript.js"></script>
     <script type="text/javascript">
         var log = log4javascript.getDefaultLogger();
@@ -182,6 +185,17 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 'visit-source-site': '_onVisitSourceSite',
                 'is-this-safe': '_onIsThisSafe'
             },
+
+            observers:[
+                '_onConnectionsListChanged(connections)',
+                '_onConnectionsSplicesChanged(connections.splices)',
+
+                '_onDocumentsListChanged(documents)',
+                '_onDocumentsSplicedChanged(documents.splices)',
+
+                '_onInteractionRequestsListChanged(_interactionRequests)',
+                '_onInteractionRequestsSplicesChanged(_interactionRequests.splices)'
+            ],
 
             properties: {
 
@@ -213,8 +227,8 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                     value: ""
                 },
 
-                /** The end-user FileThis ticket. Used to authenticate and authorize requests to the FileThis API endpoints. */
-                ticket:
+                /** The end-user FileThis token. Used to authenticate and authorize requests to the FileThis API endpoints. */
+                token:
                 {
                     type: String,
                     value: ""
@@ -327,14 +341,8 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 }
             },
 
-            observers:[
-                '_onConnectionsChanged(connections.splices)',
-                '_onDocumentsChanged(documents.splices)',
-                '_onInteractionRequestsChanged(_interactionRequests.splices)'
-            ],
 
-
-            // Application _routeData members ------------------------------------------------------------------
+            // Application data members ------------------------------------------------------------------
 
             // Note: These are effectively "static" class variables, not instance variables. We can get away with this
             // because we only ever instantiate one application object. We like not having these in the Polymer instance
@@ -357,40 +365,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
 
             ready: function()
             {
-                setInterval(this._changeNotificationPoller.bind(this), 1000);  // Poll for change notifications every two seconds
-            },
-
-            _onRouteDataChanged: function()
-            {
-                if (!this._routeData)
-                    return;
-            },
-
-            _onConnectionsChanged: function(changeRecord)
-            {
-                if (!changeRecord)
-                    return;
-
-                const showConnectionPanel = (this.connections.length > 0);
-                this._showConnectionPanel = showConnectionPanel;
-            },
-
-            _onDocumentsChanged: function(changeRecord)
-            {
-                if (!changeRecord)
-                    return;
-
-                const showDocumentPanel = (this.documents.length > 0);
-                this._showDocumentPanel = showDocumentPanel;
-            },
-
-            _onEnabledChanged: function()
-            {
-                this._lastChangeNotificationHandledOrdinal = null;
-                this._processingChangeNotifications = false;
-
-                if (this.enabled)
-                    this._getAllData();
+                setInterval(this._changeNotificationPoller.bind(this), 1000);  // Poll for change notifications
             },
 
             _changeNotificationPoller: function()
@@ -405,17 +380,91 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 this._processChangeNotifications();
             },
 
-            _onInteractionRequestsChanged: function(changeRecord)
+            _onRouteDataChanged: function(to, from)
+            {
+                if (!this._routeData)
+                    return;
+
+                // TODO
+            },
+
+            _onEnabledChanged: function(to, from)
+            {
+                this._lastChangeNotificationHandledOrdinal = null;
+                this._processingChangeNotifications = false;
+
+                if (this.enabled)
+                    this._getAllData();
+            },
+
+
+            // Connection list changes
+
+            _onConnectionsListChanged: function(to, from)
+            {
+                this._handleConnectionsChanged();
+            },
+
+            _onConnectionsSplicesChanged: function(changeRecord)
             {
                 if (!changeRecord)
                     return;
+                this._handleConnectionsChanged();
+            },
 
+            _handleConnectionsChanged: function()
+            {
+                const showConnectionPanel = (!!this.connections && this.connections.length > 0);
+                this._showConnectionPanel = showConnectionPanel;
+            },
+
+
+            // Document list changes
+
+            _onDocumentsListChanged: function(to, from)
+            {
+                this._handleDocumentsChanged();
+            },
+
+            _onDocumentsSplicedChanged: function(changeRecord)
+            {
+                if (!changeRecord)
+                    return;
+                this._handleDocumentsChanged();
+            },
+
+            _handleDocumentsChanged: function()
+            {
+                const showDocumentPanel = (!!this.documents && this.documents.length > 0);
+                this._showDocumentPanel = showDocumentPanel;
+            },
+
+
+            // Interaction request list changes
+
+            _onInteractionRequestsListChanged: function(to, from)
+            {
+                this._handleInteractionRequestsChanged();
+            },
+
+            _onInteractionRequestsSplicesChanged: function(changeRecord)
+            {
+                if (!changeRecord)
+                    return;
+                this._handleInteractionRequestsChanged();
+            },
+
+            _handleInteractionRequestsChanged: function()
+            {
+                if (!this._interactionRequests)
+                    return;
                 if (this._interactionRequests.length === 0)
                     return;
 
                 // TODO: Do we only want to do this when we just got a notification that one was created?
                 this._poseNextPendingInteractionRequest();
             },
+
 
             // User action event handling --------------------------------------------------------------------------
 
@@ -463,7 +512,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                         this._downloadFilename = document.name;
                         this._downloadUrl = this.server + this.apiPath +
                            "/documents/" + documentId +
-                            "?ticket=" + this.ticket +
+                            "?ticket=" + this.token +
                             "&accept=application%2Fpdf";
 
                         this.$.downloader.click();
@@ -709,6 +758,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             _startManualFetch: function(connection)
             {
                 // TODO: Shouldn't we disable the fetch button to prevent double-clicking?
+                // Perhaps anticipate the change of connection "state" on the server by changing it immediately.
 
                 var url = this.server + this.apiPath +
                     "/connections/" + connection.id +
@@ -727,7 +777,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 // If we already have a dialog posed
                 if (this.$.modalInteractionDialog.opened)
                 {
-                    log.info("There is already a use interaction request dialog posed");
+                    log.info("There is already a user interaction request dialog posed");
                     return;
                 }
 
@@ -756,7 +806,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                     .then(this._getAccount.bind(this))  // Rest of promise chain depends on having the account record
                     .then(function()
                     {
-                        this._getDocuments();  // Nothing in the rest of our promise chain depends on having documents
+                        this._getDocuments();  // Nothing in the rest of promise chain depends on having documents
                         return this._getSources();
                     }.bind(this))
                     .then(this._getConnections.bind(this))  // Depends on sources in order to render
@@ -1039,7 +1089,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
 
                 this.documents.forEach(function(document)
                 {
-                    var thumbnailUrl = this.server + "/ftapi/ftapi?op=thumb&json=true&id=" + document.id + "&ticket=" + this.ticket + "&size=medium";
+                    var thumbnailUrl = this.server + "/ftapi/ftapi?op=thumb&json=true&id=" + document.id + "&ticket=" + this.token + "&size=medium";
                     document.thumbnailUrl = thumbnailUrl;
                 }.bind(this));
             },
@@ -1048,7 +1098,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             {
                 // TODO: Can we send the ticket as a header here, now?
 
-                var thumbnailUrl = this.server + "/ftapi/ftapi?op=thumb&json=true&id=" + document.id + "&ticket=" + this.ticket + "&size=medium";
+                var thumbnailUrl = this.server + "/ftapi/ftapi?op=thumb&json=true&id=" + document.id + "&ticket=" + this.token + "&size=medium";
                 document.thumbnailUrl = thumbnailUrl;
             },
 
@@ -1079,7 +1129,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
 
                         this._handleError(reason);
 
-                        // If we're still live (eg. the user ticket did not just expire)
+                        // If we're still live (eg. the user token did not just expire)
                         if (this.enabled)
                         {
                             // Fall back to doing a full refresh of all data
@@ -1587,7 +1637,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             {
                 return {
                     headers: {
-                        "X-FileThis-Session": this.ticket
+                        "X-FileThis-Session": this.token
                     }
                 };
             },
