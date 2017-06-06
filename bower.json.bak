@@ -3,7 +3,7 @@
   "description": "A standard implementation of a FileThis Connect element.",
   "main": "ft-connect-standard.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.9.0",
+    "polymer": "Polymer/polymer#^1.9.1",
     "ft-connection-details": "filethis/ft-connection-details#^0.0.5",
     "ft-connection-list": "filethis/ft-connection-list#^0.0.5",
     "ft-connection-list-item": "filethis/ft-connection-list-item#^0.0.6",
@@ -33,7 +33,7 @@
     "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
     "web-component-tester": "^4.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.24"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.1"
   },
   "resolutions": {
     "iron-location": "1 - 2",
