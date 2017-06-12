@@ -43,7 +43,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
 
 <dom-module id="ft-connect-standard">
 
-    <style include="iron-flex iron-flex-alignment"></style>
+    <style include="iron-flex iron-flex-alignment iron-positioning"></style>
 
     <style is="custom-style">
         paper-checkbox.white {
@@ -97,7 +97,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 <ft-source-panel
                         id="sourcesPanel"
                         name="sources"
-                        style="width:100%;"
+                        style="width:500px; height:500px;"
                         sources="[[sources]]">
                 </ft-source-panel>
 
@@ -105,6 +105,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 <ft-connections-panel
                         id="connectionsPanel"
                         name="connections"
+                        style="width:500px; height:500px;"
                         connections="[[connections]]"
                         sources="[[sources]]"
                         hidden="[[!_showConnectionPanel]]">
@@ -114,6 +115,11 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 <ft-document-panel
                         id="documentsPanel"
                         name="documents"
+                        style="width:500px; height:500px;"
+                        show-preview-button="[[myfalse]]"
+                        show-upload-button="[[myfalse]]"
+                        show-download-button="[[myfalse]]"
+                        show-delete-button="[[myfalse]]"
                         documents="[[documents]]"
                         hidden="[[!_showDocumentPanel]]">
                 </ft-document-panel>
@@ -198,6 +204,12 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             ],
 
             properties: {
+
+                myfalse:
+                {
+                    type: Boolean,
+                    value: false
+                },
 
                 /** When true, we are live */
                 enabled:
@@ -353,6 +365,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             // Connection changes
             _createdDocuments: {},
             _deletedDocuments: {},
+            _createdDerivatives: {},
             _createdConnections: {},
             _deletedConnections: {},
             _updatedConnections: {},
@@ -1085,21 +1098,20 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
 
             _injectThumbnailUrlIntoDocuments: function()
             {
-                // TODO: Can we send the ticket as a header here, now?
-
                 this.documents.forEach(function(document)
                 {
-                    var thumbnailUrl = this.server + "/ftapi/ftapi?op=thumb&json=true&id=" + document.id + "&ticket=" + this.token + "&size=medium";
-                    document.thumbnailUrl = thumbnailUrl;
+                    this._injectThumbnailUrlIntoDocument(document);
                 }.bind(this));
             },
 
             _injectThumbnailUrlIntoDocument: function(document)
             {
-                // TODO: Can we send the ticket as a header here, now?
-
-                var thumbnailUrl = this.server + "/ftapi/ftapi?op=thumb&json=true&id=" + document.id + "&ticket=" + this.token + "&size=medium";
-                document.thumbnailUrl = thumbnailUrl;
+                var url = this.server + this.apiPath +
+                    "/documents/" + document.id +
+                    "/derivatives/" + "thumbnail-medium" +
+                    "?ticket=" + this.token +
+                    "&accept=" + "image%2Fjpeg";
+                document.thumbnailUrl = url;
             },
 
 
@@ -1118,6 +1130,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                     .then(this._handleDeletedAndUpdatedRecordedChangeNotifications.bind(this))
                     .then(this._handleCreatedConnectionRecordedChangeNotifications.bind(this))
                     .then(this._handleCreatedDocumentRecordedChangeNotifications.bind(this))
+                    .then(this._handleCreatedDerivativeRecordedChangeNotifications.bind(this))
                     .then(this._handleCreatedInteractionRequestRecordedChangeNotifications.bind(this))
                     .then(function()
                     {
@@ -1149,6 +1162,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             _connectionValidationPattern: /^\/connections\/([a-zA-Z0-9]+)\/validation\/([a-zA-Z]+)$/,
             _interactionPattern: /^\/connections\/([a-zA-Z0-9]+)\/interactions\/([a-zA-Z0-9]+)$/,
             _documentPattern: /^\/documents\/([a-zA-Z0-9]+)$/,
+            _derivativePattern: /^\/documents\/([a-zA-Z0-9]+)\/derivatives\/(thumbnail-medium)$/,  // TODO: For now
 
             _getAllChangeNotifications: function()
             {
@@ -1206,6 +1220,8 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
 
                     if (this._recordDocumentChanged(type, resource))
                         return;
+                    if (this._recordDerivativeChanged(type, resource))
+                        return;
                     if (this._recordConnectionChanged(type, resource))
                         return;
                     if (this._recordConnectionStateChanged(type, resource))
@@ -1222,6 +1238,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             {
                 this._createdDocuments = {};
                 this._deletedDocuments = {};
+                this._createdDerivatives = {};
                 this._createdConnections = {};
                 this._deletedConnections = {};
                 this._updatedConnections = {};
@@ -1255,10 +1272,32 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 return true;
             },
 
+            _recordDerivativeChanged: function(type, resource)
+            {
+                var match = this._derivativePattern.exec(resource);
+                if (match === null)
+                    return false;
+
+                var documentId = match[1];
+                var derivativeId = match[2];
+
+                switch (type)
+                {
+                    case "created":
+                        this._createdDerivatives[documentId] = derivativeId;
+                        break;
+                    default:
+                        log.error("Unrecognized notification type for derivative resource: " + type);
+                        break;
+                }
+
+                return true;
+            },
+
             _recordConnectionChanged: function(type, resource)
             {
                 var match = this._connectionPattern.exec(resource);
-                if (match == null)
+                if (match === null)
                     return false;
 
                 var connectionId = match[1];
@@ -1285,7 +1324,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             _recordConnectionStateChanged: function(type, resource)
             {
                 var match = this._connectionStatePattern.exec(resource);
-                if (match == null)
+                if (match === null)
                     return false;
 
                 var connectionId = match[1];
@@ -1307,7 +1346,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             _recordConnectionValidationChanged: function(type, resource)
             {
                 var match = this._connectionValidationPattern.exec(resource);
-                if (match == null)
+                if (match === null)
                     return false;
 
                 var connectionId = match[1];
@@ -1329,7 +1368,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             _recordInteractionChanged: function(type, resource)
             {
                 var match = this._interactionPattern.exec(resource);
-                if (match == null)
+                if (match === null)
                     return false;
 
                 var connectionId = match[1];
@@ -1361,6 +1400,9 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 {
                     // Remove any creation record for this document because it's old news
                     delete this._createdDocuments[deletedDocumentId];
+
+                    // Remove any records for derivative creation
+                    delete this._createdDerivatives[deletedDocumentId];
                 }.bind(this));
 
                 // For each connection deletion record
@@ -1482,6 +1524,23 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
 
                 // Get all the created documents and add them to our local list
                 var promises = createdDocumentIds.map(this._getDocument.bind(this));
+                return Promise.all(promises)
+                    .then(function(documents)
+                    {
+                        this._addObjectListToListProperty(documents, this.documents, "documents");
+                    }.bind(this));
+            },
+
+            _handleCreatedDerivativeRecordedChangeNotifications: function()
+            {
+                var createdDerivativeIds = Object.keys(this._createdDerivatives);
+
+                // If there are no created derivatives recorded, short circuit
+                if (createdDerivativeIds.length === 0)
+                    return Promise.resolve();
+
+                // Get all documents for the created derivatives and add them to our local list
+                var promises = createdDerivativeIds.map(this._getDocument.bind(this));
                 return Promise.all(promises)
                     .then(function(documents)
                     {
