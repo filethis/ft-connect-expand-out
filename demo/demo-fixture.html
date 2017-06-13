@@ -21,6 +21,12 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
 
     <template>
 
+        <style>
+            :host {
+                display:block;
+            }
+        </style>
+
         <ft-connect-standard
                 id="connect"
                 account="[[account]]"
