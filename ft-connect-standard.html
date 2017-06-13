@@ -47,32 +47,18 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
 
     <style include="iron-flex iron-flex-alignment iron-positioning"></style>
 
-    <style is="custom-style">
-        paper-checkbox.white {
-          --paper-checkbox-checked-color: white;
-          --paper-checkbox-checked-ink-color: white;
-          --paper-checkbox-unchecked-color: white;
-          --paper-checkbox-unchecked-ink-color: white;
-          --paper-checkbox-label-color: white;
-        }
-
-        /* We use links in our tab bar so that routing will work, but want the text to look "normal" */
-        a {
-            color:white;
-            border:none;
-            text-decoration:none;
-            height: auto !important;
-        }
-
-    </style>
-
-    <style>
-        [hidden] {
-          display: none !important;
-        }
-    </style>
-
     <template>
+
+        <style>
+            :host {
+                display:block;
+            }
+
+            [hidden] {
+                display: none !important;
+            }
+
+        </style>
 
         <app-route
             route="{{route}}"
@@ -80,26 +66,26 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             data="{{_routeData}}">
         </app-route>
 
+        <!-- Vertical layout of header bar and panels-->
         <div
-                class="layout vertical">
+                class="layout vertical"
+                style="width:100%; height:100%; ">
 
             <!-- Header bar -->
             <div
                     class="layout vertical center"
-                    style="height:30px; font-family:Arial;">
+                    style="height:30px; font-family:Arial; ">
                 Please select the insitutions from which to fetch your documents
             </div>
 
-            <!-- Panels -->
-            <div
-                    class="layout horizontal"
-                    style="width:100%; height:100%;">
+            <!-- Horizontal layout of panels-->
+            <div class="layout horizontal flex">
 
                 <!-- Source Panel -->
                 <ft-source-panel
                         id="sourcesPanel"
                         name="sources"
-                        style="width:500px; height:500px;"
+                        class="flex"
                         sources="[[sources]]">
                 </ft-source-panel>
 
@@ -107,7 +93,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 <ft-connections-panel
                         id="connectionsPanel"
                         name="connections"
-                        style="width:500px; height:500px;"
+                        class="flex"
                         connections="[[connections]]"
                         sources="[[sources]]"
                         hidden="[[!_showConnectionPanel]]">
@@ -117,7 +103,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 <ft-document-panel
                         id="documentsPanel"
                         name="documents"
-                        style="width:500px; height:500px;"
+                        class="flex"
                         show-preview-button="[[myfalse]]"
                         show-upload-button="[[myfalse]]"
                         show-download-button="[[myfalse]]"
