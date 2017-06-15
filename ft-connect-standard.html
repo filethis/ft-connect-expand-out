@@ -19,6 +19,7 @@ limitations under the License.
 
 <link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../iron-image/iron-image.html">
 <link rel="import" href="../paper-tabs/paper-tabs.html">
 <link rel="import" href="../paper-checkbox/paper-checkbox.html">
@@ -55,12 +56,6 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             }
         </style>
 
-        <style>
-            [hidden] {
-                display: none !important;
-            }
-        </style>
-
         <app-route
             route="{{route}}"
             pattern="/:panelName"
@@ -70,47 +65,53 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
         <!-- Vertical layout of header bar and panels-->
         <div
                 class="layout vertical"
-                style="width:100%; height:100%; ">
-
-            <!-- Header bar -->
-            <div
-                    class="layout vertical center"
-                    style="height:30px; font-family:Arial; ">
-                Please select the insitutions from which to fetch your documents
-            </div>
+                style="height:493px; ">
 
             <!-- Horizontal layout of panels-->
-            <div class="layout horizontal flex">
+            <div
+                    id="panels"
+                    class="layout horizontal flex">
 
                 <!-- Source Panel -->
                 <ft-source-panel
                         id="sourcesPanel"
-                        name="sources"
-                        class="flex"
+                        style="width:400px; border:1px solid #DDD; "
                         sources="[[sources]]">
                 </ft-source-panel>
+
+                <!-- Spacer -->
+                <div
+                        style="width:40px; "
+                        hidden="[[_hideConnectionsPanel]]">
+                </div>
 
                 <!-- Connection Panel -->
                 <ft-connections-panel
                         id="connectionsPanel"
-                        name="connections"
-                        class="flex"
+                        style="border:1px solid #DDD; "
+                        hidden="[[_hideConnectionsPanel]]"
                         connections="[[connections]]"
-                        sources="[[sources]]"
-                        hidden="[[!_showConnectionPanel]]">
+                        sources="[[sources]]">
                 </ft-connections-panel>
+
+                <!-- Spacer -->
+                <div
+                        style="width:40px; "
+                        hidden="[[_hideDocumentPanel]]">
+                </div>
 
                 <!-- Document Panel -->
                 <ft-document-panel
                         id="documentsPanel"
-                        name="documents"
-                        class="flex"
+                        style="border:1px solid #DDD; min-width:200px"
+                        hidden="[[_hideDocumentPanel]]"
+                        show-grid-button="[[myfalse]]"
+                        show-list-button="[[myfalse]]"
                         show-preview-button="[[myfalse]]"
                         show-upload-button="[[myfalse]]"
                         show-download-button="[[myfalse]]"
                         show-delete-button="[[myfalse]]"
-                        documents="[[documents]]"
-                        hidden="[[!_showDocumentPanel]]">
+                        documents="[[documents]]">
                 </ft-document-panel>
             </div>
 
@@ -138,16 +139,16 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
         <!-- Uploader -->
         <input
                 id="uploader"
+                hidden
                 type="file"
                 on-change="_onUploaderFilesChanged"
                 multiple="true"
-                accept="[[_uploadableFileTypes]]"
-                hidden>
+                accept="[[_uploadableFileTypes]]">
 
         <!-- Downloader -->
         <a
                 id="downloader"
-                hidden$="true"
+                hidden
                 href$="[[_downloadUrl]]"
                 download$="[[_downloadFilename]]">
         </a>
@@ -162,7 +163,17 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
 
             is: 'ft-connect-standard',
 
-            behaviors: [FtErrorBehavior, FtHttpBehavior, FtConnectBehavior],
+            behaviors: [
+                FtErrorBehavior,
+                FtHttpBehavior,
+                FtConnectBehavior
+            ],
+
+            listeners:
+            {
+                'connections-changed': '_onConnectionsChanged',
+                'documents-changed': '_onDocumentsChanged'
+            },
 
             properties: {
 
@@ -175,10 +186,23 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 _routeData: {
                     type: Object,
                     observer: "_onRouteDataChanged"
+                },
+
+                _hideConnectionsPanel: {
+                    type: Boolean,
+                    value: true
+                },
+
+                _hideDocumentPanel: {
+                    type: Boolean,
+                    value: true
+                },
+
+                myfalse: {
+                    type: Boolean,
+                    value: false
                 }
-
             },
-
 
             _onRouteDataChanged: function(to, from)
             {
@@ -186,6 +210,18 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                     return;
 
                 // TODO
+            },
+
+            _onConnectionsChanged: function()
+            {
+                const hideConnectionsPanel = (this.connections.length === 0);
+                this._hideConnectionsPanel = hideConnectionsPanel;
+            },
+
+            _onDocumentsChanged: function()
+            {
+                const _hideDocumentPanel = (this.documents.length === 0);
+                this._hideDocumentPanel = _hideDocumentPanel;
             },
 
 
