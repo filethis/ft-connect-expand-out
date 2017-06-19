@@ -76,7 +76,8 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 <ft-source-panel
                         id="sourcesPanel"
                         style="width:400px; border:1px solid #DDD; "
-                        sources="[[sources]]">
+                        sources="[[sources]]"
+                        filter="{{sourceFilter}}">
                 </ft-source-panel>
 
                 <!-- Spacer -->
@@ -111,6 +112,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                         show-upload-button="[[myfalse]]"
                         show-download-button="[[myfalse]]"
                         show-delete-button="[[myfalse]]"
+                        show-document-count="[[myfalse]]"
                         documents="[[documents]]">
                 </ft-document-panel>
             </div>
@@ -194,6 +196,11 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 },
 
                 _hideDocumentPanel: {
+                    type: Boolean,
+                    value: true
+                },
+
+                mytrue: {
                     type: Boolean,
                     value: true
                 },
