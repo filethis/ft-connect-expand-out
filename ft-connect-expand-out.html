@@ -29,7 +29,7 @@ limitations under the License.
 
 <link rel="import" href="../ft-document-panel/ft-document-panel.html">
 <link rel="import" href="../ft-source-panel/ft-source-panel.html">
-<link rel="import" href="../ft-connections-panel/ft-connections-panel.html">
+<link rel="import" href="../ft-connection-panel/ft-connection-panel.html">
 <link rel="import" href="../ft-user-interaction-form/ft-user-interaction-form.html">
 <link rel="import" href="../ft-confirmation-dialog/ft-confirmation-dialog.html">
 <link rel="import" href="../ft-error-behavior/ft-error-behavior.html">
@@ -38,13 +38,13 @@ limitations under the License.
 
 
 <!--
-`ft-connect-standard`
+`ft-connect-expand-out`
 A drop-in HTML 5 element that quickly, securely, and flexibly integrates your application with the FileThis API.
 
 @demo demo/index.html
 -->
 
-<dom-module id="ft-connect-standard">
+<dom-module id="ft-connect-expand-out">
 
     <style include="iron-flex iron-flex-alignment iron-positioning"></style>
 
@@ -87,13 +87,13 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 </div>
 
                 <!-- Connection Panel -->
-                <ft-connections-panel
+                <ft-connection-panel
                         id="connectionsPanel"
                         style="border:1px solid #DDD; "
                         hidden="[[_hideConnectionsPanel]]"
                         connections="[[connections]]"
                         sources="[[sources]]">
-                </ft-connections-panel>
+                </ft-connection-panel>
 
                 <!-- Spacer -->
                 <div
@@ -163,7 +163,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
     <script>
         Polymer({
 
-            is: 'ft-connect-standard',
+            is: 'ft-connect-expand-out',
 
             behaviors: [
                 FtErrorBehavior,

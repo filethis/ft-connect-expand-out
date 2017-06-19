@@ -1,6 +1,6 @@
-[_Demo and API docs_](https://filethis.github.io/ft-connect-standard/components/ft-connect-standard/)
+[_Demo and API docs_](https://filethis.github.io/ft-connect-expand-out/components/ft-connect-expand-out/)
 
-### \<ft-connect-standard\>
+### \<ft-connect-expand-out\>
 
 -----------------------------------------------------------
 
