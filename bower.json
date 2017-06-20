@@ -22,7 +22,7 @@
     "ft-http-behavior": "filethis/ft-http-behavior#^0.0.3",
     "ft-connect-behavior": "filethis/ft-connect-behavior#^0.0.1",
     "ft-confirmation-dialog": "filethis/ft-confirmation-dialog#^0.0.3",
-    "ft-icon-button": "filethis/ft-icon-button#^0.0.4",
+    "ft-labeled-icon-button": "filethis/ft-labeled-icon-button#^0.0.4",
     "ft-scrolling-behavior": "filethis/ft-scrolling-behavior#^0.0.1",
     "iron-image": "PolymerElements/iron-image#^2.0.0",
     "paper-tabs": "PolymerElements/paper-tabs#^2.0.0",
