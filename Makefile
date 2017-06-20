@@ -1,6 +1,6 @@
 # Project configuration
 NAME=ft-connect-expand-out
-VERSION=0.0.4
+VERSION=0.0.5
 LOCAL_PORT=3502
 GITHUB_USER=filethis
 
