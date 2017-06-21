@@ -14,7 +14,7 @@
     "ft-document-list": "filethis/ft-document-list#^0.0.10",
     "ft-document-list-item": "filethis/ft-document-list-item#^0.0.8",
     "ft-document-panel": "filethis/ft-document-panel#^0.0.11",
-    "ft-source-panel": "filethis/ft-source-panel#^0.0.10",
+    "ft-source-panel": "filethis/ft-source-panel#^0.0.11",
     "ft-source-grid": "filethis/ft-source-grid#^0.0.7",
     "ft-source-grid-item": "filethis/ft-source-grid-item#^0.0.6",
     "ft-user-interaction-form": "filethis/ft-user-interaction-form#^0.0.15",
