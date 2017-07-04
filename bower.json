@@ -3,7 +3,10 @@
   "description": "A standard implementation of a FileThis Connect element.",
   "main": "ft-connect-expand-out.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^2.0.1",
+    "app-route": "PolymerElements/app-route#1 - 2",
+    "array-filter": "43081j/array-filter#^2.0.0",
+    "ft-confirmation-dialog": "filethis/ft-confirmation-dialog#^0.0.5",
+    "ft-connect-behavior": "filethis/ft-connect-behavior#^0.0.2",
     "ft-connection-details": "filethis/ft-connection-details#^0.0.11",
     "ft-connection-list": "filethis/ft-connection-list#^0.0.10",
     "ft-connection-list-item": "filethis/ft-connection-list-item#^0.0.12",
@@ -14,30 +17,28 @@
     "ft-document-list": "filethis/ft-document-list#^0.0.11",
     "ft-document-list-item": "filethis/ft-document-list-item#^0.0.11",
     "ft-document-panel": "filethis/ft-document-panel#^0.0.13",
-    "ft-source-panel": "filethis/ft-source-panel#^0.0.12",
-    "ft-source-grid": "filethis/ft-source-grid#^0.0.7",
-    "ft-source-grid-item": "filethis/ft-source-grid-item#^0.0.6",
-    "ft-user-interaction-form": "filethis/ft-user-interaction-form#^0.0.15",
     "ft-error-behavior": "filethis/ft-error-behavior#^0.0.4",
     "ft-http-behavior": "filethis/ft-http-behavior#^0.0.4",
-    "ft-connect-behavior": "filethis/ft-connect-behavior#^0.0.2",
-    "ft-confirmation-dialog": "filethis/ft-confirmation-dialog#^0.0.5",
     "ft-labeled-icon-button": "filethis/ft-labeled-icon-button#^0.0.3",
     "ft-scrolling-behavior": "filethis/ft-scrolling-behavior#^0.0.1",
-    "iron-image": "PolymerElements/iron-image#^2.0.0",
-    "paper-tabs": "PolymerElements/paper-tabs#^2.0.0",
-    "array-filter": "43081j/array-filter#^2.0.0",
+    "ft-source-grid": "filethis/ft-source-grid#^0.0.7",
+    "ft-source-grid-item": "filethis/ft-source-grid-item#^0.0.6",
+    "ft-source-panel": "filethis/ft-source-panel#^0.0.12",
+    "ft-user-interaction-form": "filethis/ft-user-interaction-form#^0.0.15",
+    "iron-image": "PolymerElements/iron-image#1 - 2",
     "log4javascript": "^1.4.9",
-    "app-route": "PolymerElements/app-route#^2.0.0"
+    "paper-tabs": "PolymerElements/paper-tabs#1 - 2",
+    "polymer": "Polymer/polymer#1.9 - 2"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
-    "web-component-tester": "^4.0.0",
+    "iron-component-page": "PolymerElements/iron-component-page#1 - 2",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#1 - 2",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#1 - 2",
+    "web-component-tester": "^6.0.0",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
   },
   "resolutions": {
-    "polymer": "^2.0.1",
-    "webcomponentsjs": "^v1.0.0"
+    "polymer": "1.9 - 2",
+    "webcomponentsjs": "^1.0.0"
   }
 }
