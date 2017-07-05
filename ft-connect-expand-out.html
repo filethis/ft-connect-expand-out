@@ -18,7 +18,6 @@ limitations under the License.
 <link rel="import" href="../polymer/polymer.html">
 
 <link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
-<link rel="import" href="../paper-toolbar/paper-toolbar.html">
 <link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../iron-image/iron-image.html">
 <link rel="import" href="../paper-tabs/paper-tabs.html">
@@ -221,13 +220,13 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
 
             _onConnectionsChanged: function()
             {
-                const hideConnectionsPanel = (this.connections.length === 0);
+                var hideConnectionsPanel = (this.connections.length === 0);
                 this._hideConnectionsPanel = hideConnectionsPanel;
             },
 
             _onDocumentsChanged: function()
             {
-                const _hideDocumentPanel = (this.documents.length === 0);
+                var _hideDocumentPanel = (this.documents.length === 0);
                 this._hideDocumentPanel = _hideDocumentPanel;
             },
 
@@ -253,7 +252,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                     "/connections/" + connectionId +
                     "/interactions/" + interactionId +
                     "/response";
-                const options = this._buildHttpOptions();
+                var options = this._buildHttpOptions();
 
                 return this.httpPut(url, interactionResponse, options)
                     .then(function()
@@ -279,7 +278,7 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
 //                    "/connections/" + connectionId +
 //                    "/interactions/" + interactionId +
 //                    "/response";
-//            const options = this._buildHttpOptions();
+//            var options = this._buildHttpOptions();
 //
 //                return this.httpPost(url, interactionResponse, options)
 //                    .then(function()
