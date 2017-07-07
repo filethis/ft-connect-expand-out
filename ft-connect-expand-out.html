@@ -15,25 +15,16 @@ limitations under the License.
 -->
 
 
-<link rel="import" href="../polymer/polymer.html">
-
-<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
-<link rel="import" href="../paper-button/paper-button.html">
-<link rel="import" href="../iron-image/iron-image.html">
-<link rel="import" href="../paper-tabs/paper-tabs.html">
-<link rel="import" href="../paper-checkbox/paper-checkbox.html">
-<link rel="import" href="../paper-icon-button/paper-icon-button.html">
-<link rel="import" href="../iron-pages/iron-pages.html">
 <link rel="import" href="../app-route/app-route.html">
-
+<link rel="import" href="../ft-confirmation-dialog/ft-confirmation-dialog.html">
+<link rel="import" href="../ft-connect-behavior/ft-connect-behavior.html">
+<link rel="import" href="../ft-connection-panel/ft-connection-panel.html">
 <link rel="import" href="../ft-document-panel/ft-document-panel.html">
 <link rel="import" href="../ft-source-panel/ft-source-panel.html">
-<link rel="import" href="../ft-connection-panel/ft-connection-panel.html">
 <link rel="import" href="../ft-user-interaction-form/ft-user-interaction-form.html">
-<link rel="import" href="../ft-confirmation-dialog/ft-confirmation-dialog.html">
-<link rel="import" href="../ft-error-behavior/ft-error-behavior.html">
-<link rel="import" href="../ft-http-behavior/ft-http-behavior.html">
-<link rel="import" href="../ft-connect-behavior/ft-connect-behavior.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../paper-dialog/paper-dialog.html">
+<link rel="import" href="../polymer/polymer.html">
 
 
 <!--
@@ -152,7 +143,6 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 hidden
                 href$="[[_downloadUrl]]"
                 download$="[[_downloadFilename]]">
-        </a>
 
         <!-- Confirmation dialog -->
         <ft-confirmation-dialog id="confirmationDialog"></ft-confirmation-dialog>
@@ -165,8 +155,6 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             is: 'ft-connect-expand-out',
 
             behaviors: [
-                FtErrorBehavior,
-                FtHttpBehavior,
                 FtConnectBehavior
             ],
 
