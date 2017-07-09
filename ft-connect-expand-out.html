@@ -155,7 +155,8 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
             is: 'ft-connect-expand-out',
 
             behaviors: [
-                FileThis.ConnectBehavior
+                FileThis.ConnectBehavior,
+                FileThis.ErrorBehavior, FileThis.HttpBehavior // TODO: Why do we have to include these when ConnectBehavior aready does?
             ],
 
             listeners:
