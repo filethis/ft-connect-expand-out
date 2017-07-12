@@ -5,8 +5,6 @@
 <link rel="import" href="../../iron-flex-layout/iron-flex-layout-classes.html">
 
 <link rel="import" href="../ft-connect-expand-out.html">
-<link rel="import" href="../../ft-error-behavior/ft-error-behavior.html">
-<link rel="import" href="../../ft-http-behavior/ft-http-behavior.html">
 
 
 <!--
@@ -28,13 +26,8 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
         </style>
 
         <ft-connect-expand-out
-                id="connect"
-                account="[[account]]"
-                sources="[[sources]]"
-                connections="[[connections]]"
-                documents="[[documents]]"
-                interactionVersion="[[interactionVersion]]"
-                interactionRequests="[[interactionRequests]]">
+                id="component"
+                demo="true">
         </ft-connect-expand-out>
 
     </template>
@@ -45,138 +38,9 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
         ({
             is: 'demo-fixture',
 
-            behaviors: [FileThis.ErrorBehavior, FileThis.HttpBehavior],
-
-            properties:
-            {
-                /** The user account resource. This is obtained from the server using the authentication ticket. */
-                account:
-                {
-                    type: Object,
-                    notify: true,
-                    value: null
-                },
-
-                /** The list of all FileThis sources. */
-                sources:
-                {
-                    type: Array,
-                    notify: true,
-                    value: []
-                },
-
-                /** The list of all the user's connections. */
-                connections:
-                {
-                    type: Array,
-                    notify: true,
-                    value: []
-                },
-
-                /** The list of all the user's documents. */
-                documents:
-                {
-                    type: Array,
-                    notify: true,
-                    value: []
-                },
-
-                /** Version of user interaction schema to use. */
-                interactionVersion:
-                {
-                    type: Object,  // JSON
-                    notify: true,
-                    value: "1.0.0"
-                },
-
-                /** The list of all pending user interaction requests. */
-                interactionRequests:
-                {
-                    type: Array,
-                    notify: true,
-                    value: []
-                }
-            },
-
             ready: function()
             {
-                this._getAllFakeData();
-            },
-
-            // Get fake data from server -----------------------------------------------------------------------------
-
-            _getAllFakeData: function()
-            {
-                Promise.resolve()
-                    .then(this._getFakeAccount.bind(this))  // Everything depends on having the account record
-                    .then(function()
-                    {
-                        this._getFakeDocuments();  // Nothing depends on documents
-                        return this._getFakeSources();
-                    }.bind(this))
-                    .then(this._getFakeConnections.bind(this))  // Depends on sources in order to render
-                    .then(this._getFakeInteractionRequests.bind(this));  // Depends on connections, tho only for now
-            },
-
-            _getFakeAccount: function()
-            {
-                return new Promise(function(fulfill)
-                {
-                    var account = {"id": "123"};  // TODO: Move data into file to have more complete properties?
-                    this.account = account;
-                    fulfill(account)
-                }.bind(this));
-            },
-
-            _getFakeSources: function()
-            {
-                var url = "data/fake-sources.json";
-                return this.httpGet(url)
-                    .then(function(sources)
-                    {
-                        this.sources = sources;
-                        return sources;
-                    }.bind(this));
-            },
-
-            _getFakeConnections: function()
-            {
-                var url = "data/fake-connections.json";
-                return this.httpGet(url)
-                    .then(function(connections)
-                    {
-                        this.connections = connections;
-                        return connections;
-                    }.bind(this));
-            },
-
-            _getFakeDocuments: function()
-            {
-                var url = "data/fake-documents.json";
-                return this.httpGet(url)
-                    .then(function(documents)
-                    {
-                        this.documents = documents;
-                        return documents;
-                    }.bind(this));
-            },
-
-            _getFakeInteractionRequests: function()
-            {
-                var version = this.interactionVersion;
-                var url;
-                if (version == "2.0.0")
-                    url = "data/fake-interaction-requests-2_0_0.json";
-                else if (version == "1.0.0")
-                    url = "data/fake-interaction-requests-1_0_0.json";
-                else
-                    throw new Error("Unrecognized user interaction schema version: " + version);
-
-                return this.httpGet(url)
-                    .then(function(response)
-                    {
-                        this.interactionRequests = response;
-                    }.bind(this));
+                this.$.component.getAllData();
             }
 
         });
