@@ -1,7 +1,7 @@
-[_Demo and API docs_](https://filethis.github.io/ft-connect-expand-out/components/ft-connect-expand-out/)
+[Demo](https://filethis.github.io/ft-connect-expand-out/components/ft-connect-expand-out/demo/)    [API](https://filethis.github.io/ft-connect-expand-out/components/ft-connect-expand-out/)    [Repo](https://github.com/filethis/ft-connect-expand-out)
 
 ### \<ft-connect-expand-out\>
 
------------------------------------------------------------
+This is one of several variants of our FileThis Connect drop-in elements. This one expands to the right, as new UI elements are needed as the user traverses the workflow. Its use is appropriate when the hosting page can accomodate a significant increase in the horizontal space. If space on the page is more limited, or must be of fixed dimensions, another variant, like [ft-connect-tabbed](https://github.com/filethis/ft-connect-tabbed), or [ft-connect-wizard](https://github.com/filethis/ft-connect-wizard) would likely work better.
 
-A standard implementation of a FileThis Connect element.
+Initially, when a user account has no connections, this element will display a single panel of available websites. When the user selects one and enters their credentials, a connection is created and a second panel is created to the right of the first, displaying  a list of all existing connections. As the fetch operation proceeds for a connection and documents begin to be delivered, a third panel is created to the right of the second, displaying a list of document thumbnails.
