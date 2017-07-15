@@ -28,12 +28,12 @@ limitations under the License.
 
 
 <!--
-`ft-connect-expand-out`
-A drop-in HTML 5 element that quickly, securely, and flexibly integrates your application with the FileThis API.
+`<ft-connect-expand-out>`
 
-@demo demo/index.html
+An element that implements a FileThis user workflow as a set of panels that expand out to the right as things progress.
+
+@demo
 -->
-
 <dom-module id="ft-connect-expand-out">
 
     <template>
@@ -66,7 +66,6 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 <ft-source-panel
                         id="sourcesPanel"
                         style="width:400px; border:1px solid #DDD; "
-                        slot="sources"
                         sources="[[sources]]"
                         selected-filter-id="{{selectedFilterId}}">
                 </ft-source-panel>
@@ -80,7 +79,6 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 <!-- Connection Panel -->
                 <ft-connection-panel
                         id="connectionsPanel"
-                        slot="connections"
                         style="width:433px; border:1px solid #DDD; "
                         hidden="[[_hideConnectionsPanel]]"
                         connections="[[connections]]"
@@ -96,7 +94,6 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                 <!-- Document Panel -->
                 <ft-document-panel
                         id="documentsPanel"
-                        slot="documents"
                         style="border:1px solid #DDD; min-width:200px"
                         hidden="[[_hideDocumentPanel]]"
                         show-grid-button="false"
@@ -181,11 +178,13 @@ A drop-in HTML 5 element that quickly, securely, and flexibly integrates your ap
                     observer: "_onRouteDataChanged"
                 },
 
+                /** When there are no connections to display, this property is set to false, resulting in the connection panel being hidden. */
                 _hideConnectionsPanel: {
                     type: Boolean,
                     value: true
                 },
 
+                /** When there are no documents to display, this property is set to false, resulting in the document panel being hidden. */
                 _hideDocumentPanel: {
                     type: Boolean,
                     value: true
