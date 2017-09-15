@@ -8,6 +8,7 @@
     "ft-connect-behavior": "filethis/ft-connect-behavior#^0.0.10",
     "ft-connection-panel": "filethis/ft-connection-panel#^0.0.17",
     "ft-document-panel": "filethis/ft-document-panel#^0.0.20",
+    "ft-element-demo": "filethis/ft-element-demo#^0.0.1",
     "ft-source-panel": "filethis/ft-source-panel#^0.0.19",
     "ft-user-interaction-form": "filethis/ft-user-interaction-form#^0.0.22",
     "iron-image": "PolymerElements/iron-image#1 - 2",
