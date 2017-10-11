@@ -144,6 +144,7 @@ An element that implements a FileThis user workflow as a set of panels that expa
                 hidden
                 href$="[[_downloadUrl]]"
                 download$="[[_downloadFilename]]">
+        </a>
 
         <!-- Confirmation dialog -->
         <ft-confirmation-dialog id="confirmationDialog"></ft-confirmation-dialog>
@@ -190,6 +191,11 @@ An element that implements a FileThis user workflow as a set of panels that expa
                     type: Boolean,
                     value: true
                 }
+            },
+
+            ready: function()
+            {
+                this.codeTemplatePath = "../bower_components/ft-connect-expand-out/data/code-template.html";
             },
 
             _onRouteDataChanged: function(to, from)
