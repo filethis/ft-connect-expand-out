@@ -1,0 +1,32 @@
+{
+  "name": "ft-document-list-item",
+  "description": "An element that renders information about a FileThis document in a parent list",
+  "main": "ft-document-list-item.html",
+  "dependencies": {
+    "ft-element-demo": "filethis/ft-element-demo#^0.0.11",
+    "iron-label": "PolymerElements/iron-label#1 - 2",
+    "polymer": "Polymer/polymer#1.9 - 2"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#1 - 2",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#1 - 2",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#1 - 2",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "1.9 - 2",
+    "webcomponentsjs": "^1.0.0"
+  },
+  "homepage": "https://github.com/filethis/ft-document-list-item",
+  "version": "0.0.25",
+  "_release": "0.0.25",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.25",
+    "commit": "90b1023b5544c7650e90264ec3009b3abbc05706"
+  },
+  "_source": "https://github.com/filethis/ft-document-list-item.git",
+  "_target": "^0.0.25",
+  "_originalSource": "filethis/ft-document-list-item"
+}

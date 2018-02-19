@@ -1,0 +1,227 @@
+<!--
+Copyright 2017 FileThis, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+
+<link rel="import" href="../polymer/polymer.html">
+
+
+<script>
+
+    // Make sure the "FileThis" namespace exists
+    window.FileThis = window.FileThis || {};
+
+    /**
+     * `<ft-document-panel-settings-behavior>`
+     *
+     * Mixin to get document panel settings properties.
+     *
+     * @demo
+     * @polymerBehavior FileThis.DocumentPanelSettingsBehavior
+     */
+    FileThis.DocumentPanelSettingsBehavior = {
+
+        observers:[
+            '_onInternalSettingsChanged(showHeading, heading, showGridButton, showListButton, showPreviewButton, showUploadButton, showDownloadButton, showDeleteButton, showDocumentCount)',
+        ],
+
+        properties: {
+
+            /**
+             * Show a heading string.
+             *
+             * Note that you can provide the strings "true" and "false" as attribute values .
+             *
+             * @type {boolean}
+             */
+            showHeading:
+            {
+                type: Object,
+                value: true
+            },
+
+            /** Heading to display when "showHeading" is true. */
+            heading:
+            {
+                type: String,
+                value: "Documents"
+            },
+
+            /**
+             * Show a button that lets users choose to view documents in a grid.
+             *
+             * Note that you can provide the strings "true" and "false" as attribute values .
+             *
+             * @type {boolean}
+             */
+            showGridButton:
+            {
+                type: Object,
+                value: true
+            },
+
+            /**
+             * Show a button that lets users choose to view documents in a list.
+             *
+             * Note that you can provide the strings "true" and "false" as attribute values .
+             *
+             * @type {boolean}
+             */
+            showListButton:
+            {
+                type: Object,
+                value: true
+            },
+
+            /**
+             * Show a button that lets users choose to preview the selected document.
+             *
+             * Note that you can provide the strings "true" and "false" as attribute values .
+             *
+             * @type {boolean}
+             */
+            showPreviewButton:
+            {
+                type: Object,
+                value: true
+            },
+
+            /**
+             * Show a button that lets users upload document files.
+             *
+             * Note that you can provide the strings "true" and "false" as attribute values .
+             *
+             * @type {boolean}
+             */
+            showUploadButton:
+            {
+                type: Object,
+                value: true
+            },
+
+            /**
+             * Show a button that lets users download file for the selected document.
+             *
+             * Note that you can provide the strings "true" and "false" as attribute values .
+             *
+             * @type {boolean}
+             */
+            showDownloadButton:
+            {
+                type: Object,
+                value: true
+            },
+
+            /**
+             * Show a button that lets users delete the selected document.
+             *
+             * Note that you can provide the strings "true" and "false" as attribute values .
+             *
+             * @type {boolean}
+             */
+            showDeleteButton:
+            {
+                type: Object,
+                value: true
+            },
+
+            /**
+             * Show count of documents.
+             *
+             * Note that you can provide the strings "true" and "false" as attribute values .
+             *
+             * @type {boolean}
+             */
+            showDocumentCount:
+            {
+                type: Object,
+                value: true
+            },
+
+        },
+
+        _onInternalSettingsChanged: function(to)
+        {
+            this.fire("internal-settings-changed");
+        },
+
+        generateImports: function()
+        {
+            if (!this._hasSettings())
+                return "";
+
+            var imports = "<link rel=\"import\" href=\"../bower_components/ft-document-panel/ft-document-panel-settings.html\">\n";
+            return imports;
+        },
+
+        generateSettings: function()
+        {
+            if (!this._hasSettings())
+                return "";
+
+            var attributes = "";
+            if (this.showHeading !== true)
+                attributes += "\n    show-heading=false";
+            if (this.heading !== "Documents")
+                attributes += "\n    heading='" + this.heading + "'";
+            if (this.showGridButton !== true)
+                attributes += "\n    show-grid-button=false";
+            if (this.showListButton !== true)
+                attributes += "\n    show-list-button=false";
+            if (this.showPreviewButton !== true)
+                attributes += "\n    show-preview-button=false";
+            if (this.showUploadButton !== true)
+                attributes += "\n    show-upload-button=false";
+            if (this.showDownloadButton !== true)
+                attributes += "\n    show-download-button=false";
+            if (this.showDeleteButton !== true)
+                attributes += "\n    show-delete-button=false";
+            if (this.showDocumentCount !== true)
+                attributes += "\n    show-document-count=false";
+
+            var settings = "";
+
+            settings += "\n<ft-document-panel-settings ";
+            settings += attributes;
+            settings += ">\n</ft-document-panel-settings>\n";
+
+            return settings;
+        },
+
+        _hasSettings: function()
+        {
+            if (this.showHeading !== true)
+                return true;
+            if (this.heading !== "Documents")
+                return true;
+            if (this.showGridButton !== true)
+                return true;
+            if (this.showListButton !== true)
+                return true;
+            if (this.showPreviewButton !== true)
+                return true;
+            if (this.showUploadButton !== true)
+                return true;
+            if (this.showDownloadButton !== true)
+                return true;
+            if (this.showDeleteButton !== true)
+                return true;
+            if (this.showDocumentCount !== true)
+                return true;
+            return false;
+        },
+    }
+
+</script>

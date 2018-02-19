@@ -1,0 +1,30 @@
+{
+  "name": "ft-user-interaction-form",
+  "description": "FileThis UserInteraction form",
+  "main": "ft-user-interaction-form.html",
+  "dependencies": {
+    "ft-element-demo": "filethis/ft-element-demo#^0.0.11",
+    "iron-label": "PolymerElements/iron-label#1 - 2",
+    "paper-button": "PolymerElements/paper-button#1 - 2",
+    "paper-checkbox": "PolymerElements/paper-checkbox#1 - 2",
+    "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#1 - 2",
+    "paper-input": "PolymerElements/paper-input#1 - 2",
+    "paper-item": "PolymerElements/paper-item#1 - 2",
+    "paper-listbox": "PolymerElements/paper-listbox#1 - 2",
+    "paper-material": "PolymerElements/paper-material#1 - 2",
+    "paper-radio-button": "PolymerElements/paper-radio-button#1 - 2",
+    "paper-radio-group": "PolymerElements/paper-radio-group#1 - 2",
+    "polymer": "Polymer/polymer#1.9 - 2"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#1 - 2",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#1 - 2",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#1 - 2",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "1.9 - 2",
+    "webcomponentsjs": "^1.0.0"
+  }
+}

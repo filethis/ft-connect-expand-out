@@ -1,0 +1,35 @@
+{
+  "name": "ft-connection-panel",
+  "description": "An element that displays a list of FileThis connection resources",
+  "main": "ft-connection-panel.html",
+  "dependencies": {
+    "ft-confirmation-dialog": "filethis/ft-confirmation-dialog#^0.0.20",
+    "ft-connection-details": "filethis/ft-connection-details#^0.0.25",
+    "ft-connection-list": "filethis/ft-connection-list#^0.0.24",
+    "ft-connection-list-item": "filethis/ft-connection-list-item#^0.0.27",
+    "ft-element-demo": "filethis/ft-element-demo#^0.0.11",
+    "ft-error-behavior": "filethis/ft-error-behavior#^0.0.18",
+    "ft-global-variable": "filethis/ft-global-variable#^0.0.3",
+    "ft-http-behavior": "filethis/ft-http-behavior#^0.0.18",
+    "ft-labeled-icon-button": "filethis/ft-labeled-icon-button#^0.0.17",
+    "ft-scrolling-behavior": "filethis/ft-scrolling-behavior#^0.0.15",
+    "iron-input": "PolymerElements/iron-input#1 - 2",
+    "iron-label": "PolymerElements/iron-label#1 - 2",
+    "paper-checkbox": "PolymerElements/paper-checkbox#1 - 2",
+    "paper-icon-button": "PolymerElements/paper-icon-button#1 - 2",
+    "paper-item": "PolymerElements/paper-item#1 - 2",
+    "paper-spinner": "PolymerElements/paper-spinner#1 - 2",
+    "polymer": "Polymer/polymer#1.9 - 2"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#1 - 2",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#1 - 2",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#1 - 2",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "1.9 - 2",
+    "webcomponentsjs": "^1.0.0"
+  }
+}

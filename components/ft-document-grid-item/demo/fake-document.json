@@ -1,0 +1,16 @@
+{
+    "accountId": "1233",
+    "connectionId": "4567",
+    "actionDate": "2016-03-15T01:05:34+00:00",
+    "addedDate": "2016-03-18T01:05:14+00:00",
+    "createdDate": "2016-03-15T01:05:14+00:00",
+    "deliveredDate": "2016-03-15T01:05:14+00:00",
+    "relevantDate": "2016-03-15T01:05:14+00:00",
+    "deliveryState": "done",
+    "id": "1",
+    "name": "PG&E 8792875 2017-03-16.pdf",
+    "pageCount": "4",
+    "size": "590487",
+    "thumbnailUrl": "thumbnail.jpg"
+}
+

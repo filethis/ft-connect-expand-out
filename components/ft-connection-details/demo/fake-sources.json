@@ -1,0 +1,18 @@
+[
+    {
+        "id": 7,
+        "name": "Comcast",
+        "type": "util",
+        "state": "live",
+        "homePageUrl": "https:\/\/login.comcast.net\/login",
+        "phone": "(800) 266-2278",
+        "logoPath": "logos\/Logo_Comcast.png",
+        "logo": "Logo_Comcast.png",
+        "logoUrl": "https:\/\/filethis.com\/static\/logos\/72\/Logo_Comcast.png",
+        "note": "",
+        "info": "",
+        "pattern": "",
+        "isNew": false,
+        "isPopular": true
+    }
+]

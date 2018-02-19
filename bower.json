@@ -1,0 +1,31 @@
+{
+  "name": "ft-connect-expand-out",
+  "description": "A standard implementation of a FileThis Connect element.",
+  "main": "ft-connect-expand-out.html",
+  "dependencies": {
+    "app-route": "PolymerElements/app-route#1 - 2",
+    "ft-confirmation-dialog": "filethis/ft-confirmation-dialog#^0.0.20",
+    "ft-connect-behavior": "filethis/ft-connect-behavior#^0.0.17",
+    "ft-connection-panel": "filethis/ft-connection-panel#^0.0.24",
+    "ft-document-panel": "filethis/ft-document-panel#^0.0.27",
+    "ft-element-demo": "filethis/ft-element-demo#^0.0.11",
+    "ft-source-panel": "filethis/ft-source-panel#^0.0.26",
+    "ft-user-interaction-form": "filethis/ft-user-interaction-form#^0.0.29",
+    "iron-image": "PolymerElements/iron-image#1 - 2",
+    "log4javascript": "^1.4.9",
+    "paper-dialog": "PolymerElements/paper-dialog#1 - 2",
+    "paper-tabs": "PolymerElements/paper-tabs#1 - 2",
+    "polymer": "Polymer/polymer#1.9 - 2"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#1 - 2",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#1 - 2",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#1 - 2",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "1.9 - 2",
+    "webcomponentsjs": "^1.0.0"
+  }
+}

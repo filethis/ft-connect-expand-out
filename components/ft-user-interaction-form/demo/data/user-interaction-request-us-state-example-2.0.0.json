@@ -1,0 +1,284 @@
+{
+    "2.0.0": {
+        "version": "2.0.0",
+        "id": "CB9AE7842FD0",
+        "title": "U.S. State",
+        "code": "us-state",
+        "parts": [
+            {
+                "id": "2836FB74D0C9",
+                "kind": "static-text",
+                "text": "Please select the U.S. state in which you have your American Express account"
+            },
+            {
+                "id": "value",
+                "kind": "choices",
+                "suggestedWidgetType": "drop-down-menu",
+                "label": "",
+                "defaultChoiceId": "B851CFD29A67",
+                "choices": [
+                    {
+                        "id": "8E9364FAB270",
+                        "label": "Alabama (AL)"
+                    },
+                    {
+                        "id": "9C7846D0FB5A",
+                        "label": "Alaska (AK)"
+                    },
+                    {
+                        "id": "DA1F9283B0CE",
+                        "label": "Arizona (AZ)"
+                    },
+                    {
+                        "id": "C958B27DAF16",
+                        "label": "Arkansas (AR)"
+                    },
+                    {
+                        "id": "B851CFD29A67",
+                        "label": "California (CA)"
+                    },
+                    {
+                        "id": "B94F32E1AC06",
+                        "label": "Colorado (CO)"
+                    },
+                    {
+                        "id": "87394A21FDC0",
+                        "label": "Connecticut (CT)"
+                    },
+                    {
+                        "id": "3219d6250351a96d",
+                        "label": "Delaware (DE)"
+                    },
+                    {
+                        "id": "CBF2A5D47E61",
+                        "label": "Florida (FL)"
+                    },
+                    {
+                        "id": "C1FBE6D49587",
+                        "label": "Georgia (GA)"
+                    },
+                    {
+                        "id": "46ED85A097CB",
+                        "label": "Hawaii (HI)"
+                    },
+                    {
+                        "id": "F82A073C496B",
+                        "label": "Idaho (ID)"
+                    },
+                    {
+                        "id": "95AD416E8CB2",
+                        "label": "Illinois (IL)"
+                    },
+                    {
+                        "id": "5A8F063DEB42",
+                        "label": "Indiana (IN)"
+                    },
+                    {
+                        "id": "D4C57B9F2036",
+                        "label": "Iowa (IA)"
+                    },
+                    {
+                        "id": "04FB1C398E67",
+                        "label": "Kansas (KS)"
+                    },
+                    {
+                        "id": "9E57C18420F3",
+                        "label": "Kentucky (KY)"
+                    },
+                    {
+                        "id": "ED75F1C96B42",
+                        "label": "Louisiana (LA)"
+                    },
+                    {
+                        "id": "EDF976C84135",
+                        "label": "Maine (ME)"
+                    },
+                    {
+                        "id": "39C726A1BDF8",
+                        "label": "Maryland (MD)"
+                    },
+                    {
+                        "id": "9D78E0ACB463",
+                        "label": "Massachusetts (MA)"
+                    },
+                    {
+                        "id": "BC3AF6184970",
+                        "label": "Michigan (MI)"
+                    },
+                    {
+                        "id": "5D87EF06A93B",
+                        "label": "Minnesota (MN)"
+                    },
+                    {
+                        "id": "4A63C8F09D5B",
+                        "label": "Mississippi (MS)"
+                    },
+                    {
+                        "id": "7054386FD192",
+                        "label": "Missouri (MO)"
+                    },
+                    {
+                        "id": "B0FD1E32A548",
+                        "label": "Montana (MT)"
+                    },
+                    {
+                        "id": "E96352A1D704",
+                        "label": "Nebraska (NE)"
+                    },
+                    {
+                        "id": "0E51A49627FD",
+                        "label": "Nevada (NV)"
+                    },
+                    {
+                        "id": "6F03A9E7CDB5",
+                        "label": "New Hampshire (NH)"
+                    },
+                    {
+                        "id": "89FA053B7E12",
+                        "label": "New Jersey (NJ)"
+                    },
+                    {
+                        "id": "952E1A3CBF87",
+                        "label": "New Mexico (NM)"
+                    },
+                    {
+                        "id": "FDA709326E51",
+                        "label": "New York (NY)"
+                    },
+                    {
+                        "id": "DC0E72318B45",
+                        "label": "North Carolina (NC)"
+                    },
+                    {
+                        "id": "D462F93E7A1C",
+                        "label": "North Dakota (ND)"
+                    },
+                    {
+                        "id": "938C7BDE5160",
+                        "label": "Ohio (OH)"
+                    },
+                    {
+                        "id": "2148F7A3906B",
+                        "label": "Oklahoma (OK)"
+                    },
+                    {
+                        "id": "46A85FD3079B",
+                        "label": "Oregon (OR)"
+                    },
+                    {
+                        "id": "F693C51087BA",
+                        "label": "Pennsylvania (PA)"
+                    },
+                    {
+                        "id": "D25FAB487190",
+                        "label": "Rhode Island (RI)"
+                    },
+                    {
+                        "id": "A2519D6F4C08",
+                        "label": "South Carolina (SC)"
+                    },
+                    {
+                        "id": "8B5E4976F0A2",
+                        "label": "South Dakota (SD)"
+                    },
+                    {
+                        "id": "EDCF14657930",
+                        "label": "Tennessee (TN)"
+                    },
+                    {
+                        "id": "31C09F7245DE",
+                        "label": "Texas (TX)"
+                    },
+                    {
+                        "id": "B18D7F5E30A4",
+                        "label": "Utah (UT)"
+                    },
+                    {
+                        "id": "C54A3D081B76",
+                        "label": "Vermont (VT)"
+                    },
+                    {
+                        "id": "28AECF754936",
+                        "label": "Virginia (VA)"
+                    },
+                    {
+                        "id": "C4EDB5F97A81",
+                        "label": "Washington (WA)"
+                    },
+                    {
+                        "id": "B7D1E08926C4",
+                        "label": "West Virginia (WV)"
+                    },
+                    {
+                        "id": "A2EDC8493716",
+                        "label": "Wisconsin (WI)"
+                    },
+                    {
+                        "id": "3274C8D15FEB",
+                        "label": "Wyoming (WY)"
+                    },
+                    {
+                        "id": "E3426197FD5B",
+                        "label": "Commonwealth/Territory: (Abbreviation:)"
+                    },
+                    {
+                        "id": "DAE83706F92C",
+                        "label": "American Samoa (AS)"
+                    },
+                    {
+                        "id": "3B8F76E5C204",
+                        "label": "District of Columbia (DC)"
+                    },
+                    {
+                        "id": "E8F1DB30479C",
+                        "label": "Federated States of Micronesia (FM)"
+                    },
+                    {
+                        "id": "9801A724EF3C",
+                        "label": "Guam (GU)"
+                    },
+                    {
+                        "id": "C742A0D8531F",
+                        "label": "Marshall Islands (MH)"
+                    },
+                    {
+                        "id": "E837AF416052",
+                        "label": "Northern Mariana Islands (MP)"
+                    },
+                    {
+                        "id": "4D615CA903F7",
+                        "label": "Palau (PW)"
+                    },
+                    {
+                        "id": "23F04B18E9D6",
+                        "label": "Puerto Rico (PR)"
+                    },
+                    {
+                        "id": "8F672B4ACE03",
+                        "label": "Virgin Islands (VI)"
+                    }
+                ]
+            },
+            {
+                "id": "36794E21D5AF",
+                "kind": "link",
+                "text": "American Express",
+                "url": "https://www.americanexpress.com/"
+            },
+            {
+                "id": "CBA4371F658E",
+                "kind": "button",
+                "label": "Answer Later",
+                "action": "defer",
+                "submit": false
+            },
+            {
+                "id": "32D741A08F5B",
+                "kind": "button",
+                "label": "XXX",
+                "action": "XXX",
+                "submit": true
+            }
+        ]
+    }
+}

@@ -1,0 +1,62 @@
+<!--
+Copyright 2017 FileThis, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+
+<link rel="import" href="../ft-global-variable/ft-global-variable.html">
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="ft-document-panel-settings-behavior.html">
+
+<!--
+`<ft-document-panel-settings>`
+
+Settings applied to the ft-document-panel.
+
+@demo
+-->
+<dom-module id="ft-document-panel-settings">
+
+    <script>
+        Polymer({
+
+            is: 'ft-document-panel-settings',
+
+            behaviors: [FileThis.DocumentPanelSettingsBehavior],
+
+            attached: function()
+            {
+                // setTimeout(function()
+                // {
+                //     this._initializeSettings();
+                // }.bind(this), 1000);
+                this.async(this._initializeSettings);
+            },
+
+            _initializeSettings: function()
+            {
+                window.FileThis.FtGlobalVariable.propagateValue("ft-document-panel-showHeading", this.showHeading);
+                window.FileThis.FtGlobalVariable.propagateValue("ft-document-panel-heading", this.heading);
+                window.FileThis.FtGlobalVariable.propagateValue("ft-document-panel-show-grid-button", this.showGridButton);
+                window.FileThis.FtGlobalVariable.propagateValue("ft-document-panel-show-list-button", this.showListButton);
+                window.FileThis.FtGlobalVariable.propagateValue("ft-document-panel-show-preview-button", this.showPreviewButton);
+                window.FileThis.FtGlobalVariable.propagateValue("ft-document-panel-show-upload-button", this.showUploadButton);
+                window.FileThis.FtGlobalVariable.propagateValue("ft-document-panel-show-download-button", this.showDownloadButton);
+                window.FileThis.FtGlobalVariable.propagateValue("ft-document-panel-show-delete-button", this.showDeleteButton);
+                window.FileThis.FtGlobalVariable.propagateValue("ft-document-panel-show-document-count", this.showDocumentCount);
+            },
+
+        });
+    </script>
+</dom-module>

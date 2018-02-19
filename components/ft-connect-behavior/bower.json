@@ -1,0 +1,25 @@
+{
+  "name": "ft-connect-behavior",
+  "description": "An element that handles most of the business logic needed by FileThis Connect element variations.",
+  "main": "ft-connect-behavior.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.9 - 2",
+    "ft-confirmation-dialog": "filethis/ft-confirmation-dialog#^0.0.20",
+    "ft-element-demo": "filethis/ft-element-demo#^0.0.11",
+    "ft-error-behavior": "filethis/ft-error-behavior#^0.0.18",
+    "ft-http-behavior": "filethis/ft-http-behavior#^0.0.18",
+    "ft-scrolling-behavior": "filethis/ft-scrolling-behavior#^0.0.15",
+    "log4javascript": "^1.4.9"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#1 - 2",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#1 - 2",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#1 - 2",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "1.9 - 2",
+    "webcomponentsjs": "^1.0.0"
+  }
+}

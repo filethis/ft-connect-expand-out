@@ -1,0 +1,96 @@
+<!--
+Copyright 2017 FileThis, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+
+<link rel="import" href="../polymer/polymer.html">
+
+
+<script>
+
+    // Make sure the "FileThis" namespace exists
+    window.FileThis = window.FileThis || {};
+
+    /**
+     * `<ft-connection-list-item-settings-behavior>`
+     *
+     * Mixin to get connection list item settings properties.
+     *
+     * @demo
+     * @polymerBehavior FileThis.ConnectionListItemSettingsBehavior
+     */
+    FileThis.ConnectionListItemSettingsBehavior = {
+
+        observers:[
+            '_onInternalSettingsChanged(allowManualFetch)',
+        ],
+
+        properties: {
+
+            /**
+             * Whether to allow users to trigger document fetching "manually" by clicking a button in the connection item, or not.
+             *
+             * Note that you can provide the strings "true" and "false" as attribute values.
+             *
+             * @type {boolean}
+             */
+            allowManualFetch: {
+                type: Object,
+                value: true
+            },
+
+        },
+
+        _onInternalSettingsChanged: function(to)
+        {
+            this.fire("internal-settings-changed");
+        },
+
+        generateImports: function()
+        {
+            if (!this._hasSettings())
+                return "";
+
+            var imports = "<link rel=\"import\" href=\"../bower_components/ft-connection-list-item/ft-connection-list-item-settings.html\">\n";
+            return imports;
+        },
+
+        generateSettings: function()
+        {
+            if (!this._hasSettings())
+                return "";
+
+            var attributes = "";
+            if (this.allowManualFetch !== true)
+                attributes += "\n    allow-manual-fetch=false";
+
+            var settings = "";
+
+            settings += "\n<ft-connection-list-item-settings ";
+            settings += attributes;
+            settings += ">\n</ft-connection-list-item-settings>\n";
+
+            return settings;
+        },
+
+        _hasSettings: function()
+        {
+            if (this.allowManualFetch !== true)
+                return true;
+            return false;
+        },
+    }
+
+</script>

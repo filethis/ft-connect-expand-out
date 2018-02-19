@@ -1,0 +1,138 @@
+<!--
+Copyright 2017 FileThis, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+
+<!--
+Copyright 2017 FileThis, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+
+<!-- ft-document-panel element demo -->
+
+<!-- Imports -->
+<link rel="import" href="../../ft-element-demo/ft-element-demo.html">
+<link rel="import" href="../../iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../ft-document-panel-settings.html">
+<link rel="import" href="../ft-document-panel.html">
+<link rel="import" href="ft-document-panel-settings-editor.html">
+
+
+<!--
+
+A panel that displays a list of FileThis documents
+
+@demo
+ -->
+<dom-module id="demo-fixture">
+
+    <template>
+
+        <style include="iron-flex iron-flex-alignment iron-positioning"></style>
+
+        <style>
+            :host {
+                display:block;
+                overflow:hidden;
+                @apply --layout-vertical;
+            }
+        </style>
+
+        <ft-document-panel-settings></ft-document-panel-settings>
+
+        <ft-element-demo
+                name="ft-document-panel"
+                class="flex"
+                show-config="true"
+                code="[[code]]">
+
+            <!-- Settings -->
+            <ft-document-panel-settings-editor
+                slot="config"
+                style="height:100%; padding:20px; "
+            >
+            </ft-document-panel-settings-editor>
+
+            <!-- Panel -->
+            <ft-document-panel
+                slot="instance"
+                id="panel"
+                style="width:100%; height:100%; "
+                code="{{code}}"
+            >
+            </ft-document-panel>
+
+        </ft-element-demo>
+
+    </template>
+
+    <script>
+
+        Polymer
+        ({
+            is: 'demo-fixture',
+
+            properties:
+            {
+                code:
+                {
+                    type: String,
+                    value: ""
+                }
+            },
+
+            ready: function()
+            {
+                this._loadFakeDocuments();
+            },
+
+            _loadFakeDocuments: function()
+            {
+                var path = "fake-documents.json";
+
+                var xmlHttpRequest = new XMLHttpRequest();
+                xmlHttpRequest.overrideMimeType("application/json");
+                xmlHttpRequest.open('GET', path, true);
+                xmlHttpRequest.onreadystatechange = function()
+                {
+                    if (xmlHttpRequest.readyState === 4 &&
+                        xmlHttpRequest.status === 200)
+                    {
+                        var documents = xmlHttpRequest.responseText;
+                        this.$.panel.documents = JSON.parse(documents);
+                    }
+                }.bind(this);
+                xmlHttpRequest.send();
+            }
+
+        });
+
+    </script>
+
+</dom-module>
+

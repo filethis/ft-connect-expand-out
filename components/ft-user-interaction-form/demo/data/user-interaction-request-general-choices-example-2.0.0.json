@@ -1,0 +1,82 @@
+{
+    "2.0.0": {
+        "version": "2.0.0",
+        "id": "D3E51F7C809B",
+        "title": "Secret Questions",
+        "code": "general",
+        "parts": [
+            {
+                "id": "DE28F4A97C36",
+                "kind": "choices",
+                "suggestedWidgetType": "radiobutton",
+                "label": "Which of the following is a city in which you have lived during the past 10 years?",
+                "choices": [
+                    {
+                        "label": "Minneapolis",
+                        "id": "B1950AD267E8"
+                    },
+                    {
+                        "label": "New York",
+                        "id": "7F5634DC1A2E"
+                    },
+                    {
+                        "label": "Los Angeles",
+                        "id": "81A5B249736D"
+                    },
+                    {
+                        "label": "Denver",
+                        "id": "D32967EFB518"
+                    }
+                ]
+            },
+            {
+                "id": "2713846EF5C9",
+                "kind": "choices",
+                "suggestedWidgetType": "radiobutton",
+                "label": "Which of the following was your mortgage payment last month?",
+                "choices": [
+                    {
+                        "label": "$598",
+                        "id": "B2D764F89A05"
+                    },
+                    {
+                        "label": "$1,250",
+                        "id": "CBA632F7458D"
+                    },
+                    {
+                        "label": "$2,400",
+                        "id": "A63E8B951F7D"
+                    },
+                    {
+                        "label": "$2,800",
+                        "id": "941F2EB0D653"
+                    },
+                    {
+                        "label": "$3,200",
+                        "id": "61D798CAB04E"
+                    }
+                ]
+            },
+            {
+                "id": "36794E21D5AF",
+                "kind": "link",
+                "text": "American Express",
+                "url": "https://www.americanexpress.com/"
+            },
+            {
+                "id": "174B2358A9F0",
+                "kind": "button",
+                "label": "Answer Later",
+                "action": "defer",
+                "submit": false
+            },
+            {
+                "id": "C2F51E763A49",
+                "kind": "button",
+                "label": "Continue",
+                "action": "respond-and-continue-fetch",
+                "submit": true
+            }
+        ]
+    }
+}

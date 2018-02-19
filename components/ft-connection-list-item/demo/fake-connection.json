@@ -1,0 +1,19 @@
+{
+    "id": "2",
+    "accountId": "5",
+    "attemptDate": "2016-03-15T01:05:34+00:00",
+    "checkedDate": "2016-04-15T01:05:24+00:00",
+    "documentCount": 5,
+    "enabled": true,
+    "fetchAll": false,
+    "historicalPeriod": "30",
+    "info": "",
+    "logoUrl": "https:\/\/filethis.com\/static\/logos\/72\/Logo_Comcast.png",
+    "name": "Comcast",
+    "period": "2d",
+    "sourceId": "2",
+    "state": "waiting",
+    "successDate": "2016-03-15T01:05:14+00:00",
+    "tries": 0,
+    "validation": "done"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "ft-document-grid",
+  "description": "An element that renders a list of FileThis document items in a grid layout.",
+  "main": "ft-document-grid.html",
+  "dependencies": {
+    "ft-document-grid-item": "filethis/ft-document-grid-item#^0.0.20",
+    "ft-element-demo": "filethis/ft-element-demo#^0.0.11",
+    "iron-label": "PolymerElements/iron-label#1 - 2",
+    "iron-list": "PolymerElements/iron-list#1 - 2",
+    "polymer": "Polymer/polymer#1.9 - 2"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#1 - 2",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#1 - 2",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#1 - 2",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "1.9 - 2",
+    "webcomponentsjs": "^1.0.0"
+  },
+  "homepage": "https://github.com/filethis/ft-document-grid",
+  "version": "0.0.22",
+  "_release": "0.0.22",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.22",
+    "commit": "eff96964ce30ecebf00ed5b8087b2fee77de4a96"
+  },
+  "_source": "https://github.com/filethis/ft-document-grid.git",
+  "_target": "^0.0.22",
+  "_originalSource": "filethis/ft-document-grid"
+}

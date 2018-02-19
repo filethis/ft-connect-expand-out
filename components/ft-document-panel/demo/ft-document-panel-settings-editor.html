@@ -1,0 +1,125 @@
+<!--
+Copyright 2017 FileThis, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+
+<!-- Imports -->
+<link rel="import" href="../../ft-global-variable/ft-global-variable.html">
+<link rel="import" href="../../iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../iron-input/iron-input.html">
+<link rel="import" href="../../paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../ft-document-panel-settings-behavior.html">
+
+
+<!--
+
+This element defines a source grid example that allows experimentation with configuration.
+
+@demo
+ -->
+<dom-module id="ft-document-panel-settings-editor">
+
+    <template>
+
+        <style include="iron-flex iron-flex-alignment iron-positioning"></style>
+
+        <style>
+            :host {
+                display:block;
+                overflow:hidden;
+                @apply --layout-vertical;
+                @apply --ft-document-panel-settings-editor;
+            }
+        </style>
+
+        <style is="custom-style">
+
+            paper-checkbox {
+                width:165px;
+                margin-bottom:16px;
+            }
+        </style>
+
+        <!-- Settings -->
+        <ft-global-variable name="ft-document-panel-showHeading" value="{{showHeading}}"></ft-global-variable>
+        <ft-global-variable name="ft-document-panel-heading" value="{{heading}}"></ft-global-variable>
+        <ft-global-variable name="ft-document-panel-show-grid-button" value="{{showGridButton}}"></ft-global-variable>
+        <ft-global-variable name="ft-document-panel-show-list-button" value="{{showListButton}}"></ft-global-variable>
+        <ft-global-variable name="ft-document-panel-show-preview-button" value="{{showPreviewButton}}"></ft-global-variable>
+        <ft-global-variable name="ft-document-panel-show-upload-button" value="{{showUploadButton}}"></ft-global-variable>
+        <ft-global-variable name="ft-document-panel-show-download-button" value="{{showDownloadButton}}"></ft-global-variable>
+        <ft-global-variable name="ft-document-panel-show-delete-button" value="{{showDeleteButton}}"></ft-global-variable>
+        <ft-global-variable name="ft-document-panel-show-document-count" value="{{showDocumentCount}}"></ft-global-variable>
+
+        <!-- Settings -->
+        <paper-checkbox checked="{{showHeading}}">
+            Show Heading
+        </paper-checkbox>
+
+        <paper-input
+            id="headingField"
+            value="{{heading}}"
+            label="Heading:"
+            style="width:200px;"
+        >
+        </paper-input>
+
+        <div style="height:20px"></div>
+
+        <paper-checkbox checked="{{showGridButton}}">
+            Show Grid Button
+        </paper-checkbox>
+
+        <paper-checkbox checked="{{showListButton}}">
+            Show List Button
+        </paper-checkbox>
+
+        <paper-checkbox checked="{{showPreviewButton}}">
+            Show Preview Button
+        </paper-checkbox>
+
+        <paper-checkbox checked="{{showUploadButton}}">
+            Show Upload Button
+        </paper-checkbox>
+
+        <paper-checkbox checked="{{showDownloadButton}}" style="width:190px; ">
+            Show Download Button
+        </paper-checkbox>
+
+        <paper-checkbox checked="{{showDeleteButton}}">
+            Show Delete Button
+        </paper-checkbox>
+
+        <paper-checkbox checked="{{showDocumentCount}}" style="width:190px; ">
+            Show Document Count
+        </paper-checkbox>
+
+    </template>
+
+    <script>
+
+        Polymer
+        ({
+            is: 'ft-document-panel-settings-editor',
+
+            behaviors: [FileThis.DocumentPanelSettingsBehavior],
+
+        });
+
+    </script>
+
+</dom-module>
+
