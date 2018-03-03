@@ -329,12 +329,10 @@ An element that implements a FileThis user workflow as a set of panels that expa
 
             getPageCodeTemplate: function(isDropIn)
             {
-                var pageCodeTemplate;
                 if (isDropIn)  // Drop-In
-                    pageCodeTemplate = this.pageCodeDropIn;
-                else // Local
-                    pageCodeTemplate = this.pageCodeCustom;
-                return pageCodeTemplate;
+                    return this.pageCodeDropIn;
+                else // Custom
+                    return this.pageCodeCustom;
             },
 
         });
