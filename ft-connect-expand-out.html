@@ -42,8 +42,8 @@ An element that implements a FileThis user workflow as a set of panels that expa
 
         <style>
             :host {
-                display:block;
-                overflow:hidden;
+                display: block;
+                overflow: hidden;
                 @apply --ft-connect-expand-out;
             }
         </style>
@@ -67,7 +67,7 @@ An element that implements a FileThis user workflow as a set of panels that expa
                 <!-- Source Panel -->
                 <ft-source-panel
                         id="sourcesPanel"
-                        style="width:400px; border:1px solid black; "
+                        style="width:400px; border: 1px solid black; "
                         sources="[[sources]]"
                         selected-filter-id="{{selectedFilterId}}">
                 </ft-source-panel>
@@ -81,7 +81,7 @@ An element that implements a FileThis user workflow as a set of panels that expa
                 <!-- Connection Panel -->
                 <ft-connection-panel
                         id="connectionsPanel"
-                        style="width:433px; border:1px solid black; "
+                        style="width:433px; border: 1px solid black; "
                         hidden="[[_hideConnectionsPanel]]"
                         connections="[[connections]]"
                         sources="[[sources]]">
@@ -116,7 +116,7 @@ An element that implements a FileThis user workflow as a set of panels that expa
                 modal
                 id="modalInteractionDialog"
                 style="width:450px;
-                padding-left:40px; padding-top:12px; padding-right:40px; padding-bottom:5px;">
+                padding-left: 40px; padding-top: 12px; padding-right: 40px; padding-bottom: 5px;">
 
             <ft-user-interaction-form
                     id="interactionForm"
@@ -125,7 +125,7 @@ An element that implements a FileThis user workflow as a set of panels that expa
                     response="{{_interactionResponse}}"
                     on-submit-response="_onSubmitInteractionResponse"
                     on-button-clicked="_onInteractionFormButtonClicked"
-                    style="background:white; border:1px solid #DDD;">
+                    style="background:white; border: 1px solid #DDD;">
             </ft-user-interaction-form>
 
         </paper-dialog>
