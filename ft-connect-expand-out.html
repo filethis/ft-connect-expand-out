@@ -98,13 +98,13 @@ An element that implements a FileThis user workflow as a set of panels that expa
                         id="documentsPanel"
                         style="border:1px solid black; min-width:200px"
                         hidden="[[_hideDocumentPanel]]"
-                        show-grid-button="false"
-                        show-list-button="false"
-                        show-preview-button="false"
-                        show-upload-button="false"
-                        show-download-button="false"
-                        show-delete-button="false"
-                        show-document-count="false"
+                        ft-document-panel-show-grid-button="false"
+                        ft-document-panel-show-list-button="false"
+                        ft-document-panel-show-preview-button="false"
+                        ft-document-panel-show-upload-button="false"
+                        ft-document-panel-show-download-button="false"
+                        ft-document-panel-show-delete-button="false"
+                        ft-document-panel-show-document-count="false"
                         documents="[[documents]]">
                 </ft-document-panel>
             </div>
@@ -303,7 +303,7 @@ An element that implements a FileThis user workflow as a set of panels that expa
 
             pageCodeDropIn: "<!-- Put this at the top of your page -->\n" +
             "<link rel=\"import\" href=\"https://${PUBLICATION_DOMAIN}/ft-connect-expand-out/latest/dropin/ft-connect-expand-out.html\">\n" +
-            "{{SETTINGS_IMPORTS}}\n" +
+            "\n" +
             "<!-- Put this into the content of your page -->\n" +
             "<{{NAME}}\n" +
             "    user-account-id=\"{{ACCOUNT_ID}}\"\n" +
@@ -316,7 +316,7 @@ An element that implements a FileThis user workflow as a set of panels that expa
 
             pageCodeCustom: "<!-- Put this at the top of your page -->\n" +
             "<link rel=\"import\" href=\"../bower_components/{{NAME}}/{{NAME}}.html\">\n" +
-            "{{SETTINGS_IMPORTS}}\n" +
+            "\n" +
             "<!-- Put this into the content of your page -->\n" +
             "<{{NAME}}\n" +
             "    user-account-id=\"{{ACCOUNT_ID}}\"\n" +
