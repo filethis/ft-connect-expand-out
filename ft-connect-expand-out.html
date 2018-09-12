@@ -301,31 +301,33 @@ An element that implements a FileThis user workflow as a set of panels that expa
                 return this.poseNextPendingInteractionRequest();
             },
 
-            pageCodeDropIn: "<!-- Put this at the top of your page -->\n" +
-            "<link rel=\"import\" href=\"https://${PUBLICATION_DOMAIN}/ft-connect-expand-out/latest/dropin/ft-connect-expand-out.html\">\n" +
-            "\n" +
-            "<!-- Put this into the content of your page -->\n" +
-            "<{{NAME}}\n" +
-            "    user-account-id=\"{{ACCOUNT_ID}}\"\n" +
-            "    token=\"{{TOKEN}}\"\n" +
-            "    live=\"true\"\n" +
-            "    debug=\"true\"\n" +
-            "    fake-sources=\"true\">\n" +
-            "</{{NAME}}>\n" +
-            "{{SETTINGS_INITIALIZERS}}",
+            pageCodeDropIn:
+                "<!-- Put this at the top of your page -->\n" +
+                "<link rel=\"import\" href=\"https://connect.filethis.com/ft-connect-expand-out/latest/dropin/ft-connect-expand-out.html\">\n" +
+                "\n" +
+                "<!-- Put this into the content of your page -->\n" +
+                "{{SETTINGS_ELEMENTS}}" +
+                "<{{NAME}}\n" +
+                "    user-account-id=\"{{ACCOUNT_ID}}\"\n" +
+                "    token=\"{{TOKEN}}\"\n" +
+                "    live=\"true\"\n" +
+                "    debug=\"true\"\n" +
+                "    fake-sources=\"true\">\n" +
+                "</{{NAME}}>\n",
 
-            pageCodeCustom: "<!-- Put this at the top of your page -->\n" +
-            "<link rel=\"import\" href=\"../bower_components/{{NAME}}/{{NAME}}.html\">\n" +
-            "\n" +
-            "<!-- Put this into the content of your page -->\n" +
-            "<{{NAME}}\n" +
-            "    user-account-id=\"{{ACCOUNT_ID}}\"\n" +
-            "    token=\"{{TOKEN}}\"\n" +
-            "    live=\"true\"\n" +
-            "    debug=\"true\"\n" +
-            "    fake-sources=\"true\">\n" +
-            "</{{NAME}}>\n" +
-            "{{SETTINGS_INITIALIZERS}}",
+            pageCodeCustom:
+                "<!-- Put this at the top of your page -->\n" +
+                "<link rel=\"import\" href=\"../bower_components/{{NAME}}/{{NAME}}.html\">\n" +
+                "\n" +
+                "<!-- Put this into the content of your page -->\n" +
+                "{{SETTINGS_ELEMENTS}}" +
+                "<{{NAME}}\n" +
+                "    user-account-id=\"{{ACCOUNT_ID}}\"\n" +
+                "    token=\"{{TOKEN}}\"\n" +
+                "    live=\"true\"\n" +
+                "    debug=\"true\"\n" +
+                "    fake-sources=\"true\">\n" +
+                "</{{NAME}}>\n",
 
             getPageCodeTemplate: function(isDropIn)
             {
