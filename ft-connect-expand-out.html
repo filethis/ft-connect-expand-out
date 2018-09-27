@@ -306,7 +306,7 @@ An element that implements a FileThis user workflow as a set of panels that expa
                 "<link rel=\"import\" href=\"https://connect.filethis.com/ft-connect-expand-out/latest/dropin/ft-connect-expand-out.html\">\n" +
                 "\n" +
                 "<!-- Put this into the content of your page -->\n" +
-                "{{SETTINGS_ELEMENTS}}" +
+                "{{SETTINGS}}" +
                 "<{{NAME}}\n" +
                 "    user-account-id=\"{{ACCOUNT_ID}}\"\n" +
                 "    token=\"{{TOKEN}}\"\n" +
@@ -320,7 +320,7 @@ An element that implements a FileThis user workflow as a set of panels that expa
                 "<link rel=\"import\" href=\"../bower_components/{{NAME}}/{{NAME}}.html\">\n" +
                 "\n" +
                 "<!-- Put this into the content of your page -->\n" +
-                "{{SETTINGS_ELEMENTS}}" +
+                "{{SETTINGS}}" +
                 "<{{NAME}}\n" +
                 "    user-account-id=\"{{ACCOUNT_ID}}\"\n" +
                 "    token=\"{{TOKEN}}\"\n" +
@@ -329,7 +329,7 @@ An element that implements a FileThis user workflow as a set of panels that expa
                 "    fake-sources=\"true\">\n" +
                 "</{{NAME}}>\n",
 
-            getPageCodeTemplate: function(isDropIn)
+            getPageCodeTemplate: function(isDropIn, hasStyling, hasSettings)
             {
                 if (isDropIn)  // Drop-In
                     return this.pageCodeDropIn;
