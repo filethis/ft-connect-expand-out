@@ -329,7 +329,7 @@ An element that implements a FileThis user workflow as a set of panels that expa
                 "    fake-sources=\"true\">\n" +
                 "</{{NAME}}>\n",
 
-            getPageCodeTemplate: function(isDropIn, hasStyling, hasSettings)
+            getPageCodeTemplate: function(isDropIn, hasStyling, hasSettingsImports, hasSettingsElements)
             {
                 if (isDropIn)  // Drop-In
                     return this.pageCodeDropIn;
