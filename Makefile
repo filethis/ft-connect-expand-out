@@ -1,7 +1,7 @@
 # Project configuration
 NAME=ft-connect-expand-out
 SRC_DIR=
-VERSION=1.0.29
+VERSION=1.0.30
 LOCAL_PORT=3502
 GITHUB_USER=filethis
 GITHUB_USER_ABBREV=ft
