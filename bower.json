@@ -3,7 +3,7 @@
   "description": "A standard implementation of a FileThis Connect element.",
   "main": "ft-connect-expand-out.html",
   "dependencies": {
-    "app-route": "PolymerElements/app-route#1 - 2",
+    "app-route": "PolymerElements/app-route#2.1.2",
     "ft-confirmation-dialog": "filethis/ft-confirmation-dialog#^1.0.23",
     "ft-connect-behavior": "filethis/ft-connect-behavior#^1.0.20",
     "ft-connection-panel": "filethis/ft-connection-panel#^1.0.27",
@@ -11,17 +11,17 @@
     "ft-element-demo": "filethis/ft-element-demo#^1.0.14",
     "ft-source-panel": "filethis/ft-source-panel#^1.0.29",
     "ft-user-interaction-form": "filethis/ft-user-interaction-form#^1.0.32",
-    "iron-image": "PolymerElements/iron-image#1 - 2",
+    "iron-image": "PolymerElements/iron-image#2.2.1",
     "log4javascript": "^1.4.9",
-    "paper-dialog": "PolymerElements/paper-dialog#1 - 2",
-    "paper-tabs": "PolymerElements/paper-tabs#1 - 2",
-    "polymer": "Polymer/polymer#1.9 - 2"
+    "paper-dialog": "PolymerElements/paper-dialog#2.1.1",
+    "paper-tabs": "PolymerElements/paper-tabs#2.1.1",
+    "polymer": "Polymer/polymer#^2.7.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#1 - 2",
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#1 - 2",
-    "iron-test-helpers": "PolymerElements/iron-test-helpers#1 - 2",
-    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "iron-component-page": "PolymerElements/iron-component-page#2.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#2.1.2",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#2.0.1",
+    "web-component-tester": "Polymer/web-component-tester#^6.5.0",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.2.7"
   }
  }
