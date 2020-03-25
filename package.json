@@ -1,0 +1,26 @@
+{
+  "description": "A standard implementation of a FileThis Connect element.",
+  "name": "filethis/ft-connect-expand-out",
+  "version": "filethis/1.0.30",
+  "resolutions": {
+    "inherits": "2.0.3",
+    "samsam": "1.1.3",
+    "supports-color": "3.1.2",
+    "type-detect": "1.0.0"
+  },
+  "main": "ft-connect-expand-out.js",
+  "dependencies": {
+    "@polymer/app-route": "^3.0.0",
+    "@polymer/iron-image": "^3.0.0",
+    "@polymer/paper-dialog": "^3.0.0",
+    "@polymer/paper-tabs": "^3.0.0",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "devDependencies": {
+    "@polymer/iron-component-page": "^4.0.0",
+    "@polymer/iron-demo-helpers": "^3.0.0",
+    "@polymer/iron-test-helpers": "^3.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "@webcomponents/webcomponentsjs": "^2.0.0"
+  }
+}

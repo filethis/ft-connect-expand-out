@@ -18,7 +18,7 @@ limitations under the License.
 
 
 <link rel="import" href="../bower_components/{{FILETHIS_CONNECT_VARIANT_NAME}}/FILETHIS_CONNECT_VARIANT_NAME.html">
-<link rel="import" href="../bower_components/polymer/polymer.html">
+<script type="module" src="../../@polymer/polymer/polymer-legacy.js"></script>
 
 <dom-module id="{{NAME}}">
 
@@ -28,17 +28,19 @@ limitations under the License.
 
     </template>
 
-    <script>
-        Polymer({
+    <script type="module">
+import '@polymer/polymer/polymer-legacy.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
+Polymer({
 
-            is: '{{NAME}}',
+    is: '{{NAME}}',
 
-            _onFileThisConnectError: function(event)
-            {
-                var error = event.detail;
-                alert(error);
-            }
+    _onFileThisConnectError: function(event)
+    {
+        var error = event.detail;
+        alert(error);
+    }
 
-        });
-    </script>
+});
+</script>
 </dom-module>
