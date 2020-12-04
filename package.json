@@ -1,7 +1,7 @@
 {
   "description": "A standard implementation of a FileThis Connect element.",
-  "name": "filethis/ft-connect-expand-out",
-  "version": "filethis/1.0.30",
+  "name": "ft-connect-expand-out",
+  "version": "1.0.30",
   "resolutions": {
     "inherits": "2.0.3",
     "samsam": "1.1.3",
