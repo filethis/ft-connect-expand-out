@@ -14,13 +14,23 @@
     "@polymer/iron-image": "^3.0.0",
     "@polymer/paper-dialog": "^3.0.0",
     "@polymer/paper-tabs": "^3.0.0",
-    "@polymer/polymer": "^3.0.0"
+    "@polymer/polymer": "^3.0.0",
+    "ft-confirmation-dialog": "file:.yalc/ft-confirmation-dialog",
+    "ft-connect-behavior": "file:.yalc/ft-connect-behavior",
+    "ft-connection-panel": "file:.yalc/ft-connection-panel",
+    "ft-document-panel": "file:.yalc/ft-document-panel",
+    "ft-error-behavior": "file:.yalc/ft-error-behavior",
+    "ft-http-behavior": "file:.yalc/ft-http-behavior",
+    "ft-scrolling-behavior": "file:.yalc/ft-scrolling-behavior",
+    "ft-source-panel": "file:.yalc/ft-source-panel",
+    "ft-user-interaction-form": "file:.yalc/ft-user-interaction-form",
+    "log4javascript": "^1.4.9"
   },
   "devDependencies": {
     "@polymer/iron-component-page": "^4.0.0",
     "@polymer/iron-demo-helpers": "^3.0.0",
     "@polymer/iron-test-helpers": "^3.0.0",
-    "wct-browser-legacy": "^1.0.1",
-    "@webcomponents/webcomponentsjs": "^2.0.0"
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.1"
   }
 }

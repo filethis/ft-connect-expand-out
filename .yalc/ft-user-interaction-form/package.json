@@ -1,0 +1,26 @@
+{
+  "description": "FileThis UserInteraction form",
+  "name": "ft-user-interaction-form",
+  "version": "1.0.33+3674695f",
+  "resolutions": {
+    "inherits": "2.0.3",
+    "samsam": "1.1.3",
+    "supports-color": "3.1.2",
+    "type-detect": "1.0.0"
+  },
+  "main": "ft-user-interaction-form.js",
+  "dependencies": {
+    "@polymer/iron-label": "^3.0.0",
+    "@polymer/paper-button": "^3.0.0",
+    "@polymer/paper-checkbox": "^3.0.0",
+    "@polymer/paper-dropdown-menu": "^3.0.0",
+    "@polymer/paper-input": "^3.0.0",
+    "@polymer/paper-item": "^3.0.0",
+    "@polymer/paper-listbox": "^3.0.0",
+    "@polymer/paper-material": "^3.0.0",
+    "@polymer/paper-radio-button": "^3.0.0",
+    "@polymer/paper-radio-group": "^3.0.0",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "yalcSig": "3674695f7c648ae8f7e0ac17ee4bce47"
+}

@@ -1,0 +1,26 @@
+{
+  "description": "A panel that displays a list of FileThis sources.",
+  "name": "ft-source-panel",
+  "version": "1.0.30+3fe0bbe1",
+  "resolutions": {
+    "inherits": "2.0.3",
+    "samsam": "1.1.3",
+    "supports-color": "3.1.2",
+    "type-detect": "1.0.0"
+  },
+  "main": "ft-source-panel.js",
+  "dependencies": {
+    "@polymer/iron-a11y-keys": "^3.0.0",
+    "@polymer/iron-input": "^3.0.0",
+    "@polymer/iron-label": "^3.0.0",
+    "@polymer/paper-checkbox": "^3.0.0",
+    "@polymer/paper-dialog": "^3.0.0",
+    "@polymer/paper-dropdown-menu": "^3.0.0",
+    "@polymer/paper-icon-button": "^3.0.0",
+    "@polymer/paper-item": "^3.0.0",
+    "@polymer/paper-listbox": "^3.0.0",
+    "@polymer/paper-menu-button": "^3.0.0",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "yalcSig": "3fe0bbe1ec15dc3f82ec340623043ace"
+}

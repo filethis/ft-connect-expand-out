@@ -1,0 +1,22 @@
+{
+  "description": "An element that displays a list of FileThis connection resources",
+  "name": "ft-connection-panel",
+  "version": "1.0.28+89baf590",
+  "resolutions": {
+    "inherits": "2.0.3",
+    "samsam": "1.1.3",
+    "supports-color": "3.1.2",
+    "type-detect": "1.0.0"
+  },
+  "main": "ft-connection-panel.js",
+  "dependencies": {
+    "@polymer/iron-input": "^3.0.0",
+    "@polymer/iron-label": "^3.0.0",
+    "@polymer/paper-checkbox": "^3.0.0",
+    "@polymer/paper-icon-button": "^3.0.0",
+    "@polymer/paper-item": "^3.0.0",
+    "@polymer/paper-spinner": "^3.0.0",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "yalcSig": "89baf59001114bd162ba9769206d9518"
+}

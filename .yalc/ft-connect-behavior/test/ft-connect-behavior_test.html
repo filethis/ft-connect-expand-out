@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>ft-connect-behavior Test</title>
+
+    <script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="../../wct-browser-legacy/browser.js"></script>
+
+    <script type="module" src="../ft-connect-behavior.js"></script>
+</head>
+<body>
+<test-fixture id="basic">
+    <template>
+        <ft-connect-behavior></ft-connect-behavior>
+    </template>
+</test-fixture>
+
+<script type="module">
+import '../ft-connect-behavior.js';
+suite('ft-connect-behavior', function()
+{
+    test('instantiating the element works', function()
+    {
+        var element = fixture('basic');
+        assert.equal(element.is, 'ft-connect-behavior');
+    });
+});
+</script>
+</body>
+</html>

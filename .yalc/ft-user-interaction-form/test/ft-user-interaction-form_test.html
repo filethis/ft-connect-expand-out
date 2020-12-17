@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>ft-user-interaction-form test</title>
+
+    <script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="../../wct-browser-legacy/browser.js"></script>
+
+    <script type="module" src="../ft-user-interaction-form.js"></script>
+  </head>
+  <body>
+    <test-fixture id="basic">
+      <template>
+        <ft-user-interaction-form></ft-user-interaction-form>
+      </template>
+    </test-fixture>
+
+    <script type="module">
+import '../ft-user-interaction-form.js';
+suite('ft-user-interaction-form', function() {
+  test('instantiating the element works', function() {
+    var element = fixture('basic');
+    assert.equal(element.is, 'ft-user-interaction-form');
+  });
+});
+</script>
+  </body>
+</html>
