@@ -2,7 +2,7 @@
   "version": "v1",
   "packages": {
     "ft-confirmation-dialog": {
-      "signature": "67e8a0df66a69ab6b858b258ced2a11c",
+      "signature": "a713a4bf5bdae8839e76001abe2ac659",
       "file": true
     },
     "ft-error-behavior": {
@@ -18,7 +18,7 @@
       "file": true
     },
     "ft-connect-behavior": {
-      "signature": "2bf6d6ae5ed136199e5c30d4681300a4",
+      "signature": "269b9b69b3d011a38648dfd5e4f43d5b",
       "file": true
     },
     "ft-connection-panel": {
@@ -30,11 +30,11 @@
       "file": true
     },
     "ft-source-panel": {
-      "signature": "3fe0bbe1ec15dc3f82ec340623043ace",
+      "signature": "3418bcec4d88e61dc310f30fbf56f2f8",
       "file": true
     },
     "ft-user-interaction-form": {
-      "signature": "3674695f7c648ae8f7e0ac17ee4bce47",
+      "signature": "8d960569b8dc8dbd167b9fa4f015ca04",
       "file": true
     }
   }
