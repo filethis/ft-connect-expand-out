@@ -9,6 +9,24 @@
     "type-detect": "1.0.0"
   },
   "main": "ft-connect-expand-out.js",
+  "files": [
+    "*.html",
+    "*.js",
+    "*.make",
+    "*.png",
+    "*.svg",
+    ".yalc/",
+    "data/",
+    "demo/",
+    "test/",
+    ".babelrc",
+    ".eslintrc.json",
+    ".gitignore",
+    "LICENSE",
+    "Makefile",
+    "manifest.json",
+    "polymer.json"
+  ],
   "dependencies": {
     "@polymer/app-route": "^3.0.0",
     "@polymer/iron-image": "^3.0.0",
