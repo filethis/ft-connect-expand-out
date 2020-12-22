@@ -27,12 +27,12 @@ An element that implements a FileThis user workflow as a set of panels that expa
 */
 import '@polymer/app-route/app-route.js';
 
-import 'ft-confirmation-dialog/ft-confirmation-dialog.js';
-import 'ft-connect-behavior/ft-connect-behavior.js';
-import 'ft-connection-panel/ft-connection-panel.js';
-import 'ft-document-panel/ft-document-panel.js';
-import 'ft-source-panel/ft-source-panel.js';
-import 'ft-user-interaction-form/ft-user-interaction-form.js';
+import '@filethis/ft-confirmation-dialog/ft-confirmation-dialog.js';
+import '@filethis/ft-connect-behavior/ft-connect-behavior.js';
+import '@filethis/ft-connection-panel/ft-connection-panel.js';
+import '@filethis/ft-document-panel/ft-document-panel.js';
+import '@filethis/ft-source-panel/ft-source-panel.js';
+import '@filethis/ft-user-interaction-form/ft-user-interaction-form.js';
 import '@polymer/iron-flex-layout/iron-flex-layout-classes.js';
 import '@polymer/paper-dialog/paper-dialog.js';
 import '@polymer/polymer/polymer-legacy.js';

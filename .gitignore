@@ -4,5 +4,4 @@ build/
 dist/
 github-pages-tmp/
 *.bak
-.yalc/
 
