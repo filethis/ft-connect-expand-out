@@ -1,7 +1,7 @@
 {
   "description": "A standard implementation of a FileThis Connect element.",
   "name": "@filethis/ft-connect-expand-out",
-  "version": "1.0.30",
+  "version": "3.0.0",
   "resolutions": {
     "inherits": "2.0.3",
     "samsam": "1.1.3",
@@ -32,15 +32,15 @@
     "@polymer/paper-dialog": "^3.0.0",
     "@polymer/paper-tabs": "^3.0.0",
     "@polymer/polymer": "^3.0.0",
-    "@filethis/ft-confirmation-dialog": "^1.0.24",
-    "@filethis/ft-connect-behavior": "^1.0.21",
-    "@filethis/ft-connection-panel": "^1.0.28",
-    "@filethis/ft-document-panel": "^1.0.31",
-    "@filethis/ft-error-behavior": "^1.0.22",
-    "@filethis/ft-http-behavior": "^1.0.22",
-    "@filethis/ft-scrolling-behavior": "^1.0.19",
-    "@filethis/ft-source-panel": "^1.0.30",
-    "@filethis/ft-user-interaction-form": "^1.0.33",
+    "@filethis/ft-confirmation-dialog": "^3.0.0",
+    "@filethis/ft-connect-behavior": "^3.0.0",
+    "@filethis/ft-connection-panel": "^3.0.0",
+    "@filethis/ft-document-panel": "^3.0.0",
+    "@filethis/ft-error-behavior": "^3.0.0",
+    "@filethis/ft-http-behavior": "^3.0.0",
+    "@filethis/ft-scrolling-behavior": "^3.0.0",
+    "@filethis/ft-source-panel": "^3.0.0",
+    "@filethis/ft-user-interaction-form": "^3.0.0",
     "log4javascript": "^1.4.9"
   },
   "devDependencies": {
