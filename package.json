@@ -6,7 +6,12 @@
     "inherits": "2.0.3",
     "samsam": "1.1.3",
     "supports-color": "3.1.2",
-    "type-detect": "1.0.0"
+    "type-detect": "1.0.0",
+    "growl": "1.10.5",
+    "lodash": "4.17.20",
+    "marked": "1.2.7",
+    "minimist": "1.2.5",
+    "debug": "4.3.1"
   },
   "main": "ft-connect-expand-out.js",
   "files": [
@@ -27,6 +32,7 @@
     "polymer.json"
   ],
   "dependencies": {
+    "npm-force-resolutions": "0.0.3",
     "@polymer/app-route": "^3.0.0",
     "@polymer/iron-image": "^3.0.0",
     "@polymer/paper-dialog": "^3.0.0",
@@ -45,15 +51,17 @@
   },
   "devDependencies": {
     "@polymer/iron-component-page": "^4.0.0",
-    "@polymer/iron-demo-helpers": "^3.0.0",
+    "@polymer/iron-demo-helpers": "^3.1.0",
     "@polymer/iron-test-helpers": "^3.0.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
-    "wct-browser-legacy": "^1.0.1"
+    "growl": "^1.10.5",
+    "wct-browser-legacy": "^1.0.2"
   },
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
